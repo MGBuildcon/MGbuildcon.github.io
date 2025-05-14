@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | MG Buildcon Pvt Ltd</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #003d82;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #ff6b00;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e05d00;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: #0056b3;
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo h1 {
+            font-size: 1.6rem;
+            color: #0056b3;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        .logo h1 span {
+            color: #ff6b00;
+        }
+        
+        .logo p {
+            font-size: 0.7rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #0056b3;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #0056b3;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links .active {
+            color: #0056b3;
+        }
+        
+        .nav-links .active::after {
+            width: 100%;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+            padding: 10px 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f5f8ff;
+            color: #0056b3;
+            padding-left: 25px;
+        }
+        
+        /* Careers Hero Section */
+        .careers-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .careers-hero-content {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .careers-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+            animation: fadeInDown 1s ease-out forwards;
+        }
+        
+        .careers-hero h1 span {
+            color: #ff6b00;
+        }
+        
+        .careers-hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+        
+        /* Why Join Us Section */
+        .why-join-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover .benefit-icon {
+            background-color: #ff6b00;
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Updated Open Positions Section */
+        .positions-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+        }
+        
+        .positions-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+        }
+        
+        .position-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border-left: 5px solid #0056b3;
+            position: relative;
+        }
+        
+        .position-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .position-header {
+            background-color: white;
+            padding: 25px 30px 15px;
+            position: relative;
+        }
+        
+        .position-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .position-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .position-title-text h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 5px;
+        }
+        
+        .position-title-text p {
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .position-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding-left: 75px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        
+        .meta-item i {
+            color: #ff6b00;
+            font-size: 0.8rem;
+        }
+        
+        .position-details {
+            padding: 0 30px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .detail-section {
+            margin-bottom: 20px;
+        }
+        
+        .detail-section h4 {
+            color: #0056b3;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .detail-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: #ff6b00;
+        }
+        
+        .detail-section ul {
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
+        
+        .detail-section li {
+            margin-bottom: 8px;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .detail-section li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #ff6b00;
+            font-weight: bold;
+        }
+        
+        .position-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            margin-top: auto;
+            background-color: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .position-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background-color: #e6f0ff;
+            color: #0056b3;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .apply-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #ff6b00 0%, #e05d00 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.2);
+        }
+        
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(255, 107, 0, 0.3);
+        }
+        
+        .apply-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .apply-btn:hover i {
+            transform: translateX(3px);
+        }
+        
+        /* Featured Position Style */
+        .featured-position {
+            border-left: 5px solid #ff6b00;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #ff6b00 0%, #e05d00 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
+        }
+        
+        /* Department Filter */
+        .department-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: white;
+            color: #0056b3;
+            border: 1px solid #0056b3;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #0056b3;
+            color: white;
+        }
+        
+        /* No Results Message */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 50px;
+            color: #666;
+        }
+        
+        /* (Rest of the CSS remains the same) */
+        
+        @media (max-width: 992px) {
+            .positions-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .position-header {
+                padding: 20px 20px 15px;
+            }
+            
+            .position-details {
+                padding: 0 20px 15px;
+            }
+            
+            .position-footer {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .position-meta {
+                padding-left: 0;
+                margin-top: 10px;
+            }
+            
+            .position-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .position-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .culture-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .culture-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .culture-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .culture-text h2 {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .culture-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: #ff6b00;
+        }
+        
+        .culture-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Popup Styles */
+    .motivation-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .motivation-popup.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .popup-content {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        max-width: 300px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+    }
+    
+    .motivation-popup.active .popup-content {
+        transform: translateY(0);
+    }
+    
+    .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+    }
+    
+    .close-popup:hover {
+        color: #ff6b00;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        color: white;
+        font-size: 1.2rem;
+    }
+    
+    h4 {
+        color: #0056b3;
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+    }
+    
+    .card-quote {
+        color: #555;
+        font-style: italic;
+        font-size: 0.9rem;
+        margin: 0 0 15px;
+    }
+    
+    .card-btn {
+        background: linear-gradient(135deg, #ff6b00 0%, #e05d00 100%);
+        border: none;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+    
+    .card-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+    }
+
+        /* Footer Styles */
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #ff6b00;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #0056b3;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ff6b00;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+                transition: all 0.5s ease;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+                padding-left: 20px;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .careers-hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .careers-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .position-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .careers-hero {
+                padding-top: 70px;
+            }
+            
+            .careers-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .careers-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .culture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .culture-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .careers-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-building logo-icon"></i>
+                    <div class="logo-text">
+                        <h1><span>MG</span> Buildcon Pvt Ltd</h1>
+                        <p>Building Dreams Since 2025</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="project.html">Projects <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="project.html">Residential</a></li>
+                            <li><a href="project.html">Commercial</a></li>
+                            <li><a href="project.html">Industrial</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="construction.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="construction.html">Construction Services</a></li>
+                            <li><a href="construction.html">Architectural Design</a></li>
+                            <li><a href="construction.html">Interior Design</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html" class="">Careers</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="calculator.html" class="btn calculator-btn">Cost Calculator</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Careers Hero Section -->
+    <section class="careers-hero">
+        <div class="container">
+            <div class="careers-hero-content">
+                <h1>Join Us <span>Today!</span></h1>
+                <p>Design Your Career, Design the Future<br>Where Every Role Contributes to Building a Promising Tomorrow.</p>
+                <div class="hero-buttons">
+                    <a href="#positions" class="btn">View Open Positions</a>
+                    <a href="#why-join" class="btn btn-secondary">Why Join Us?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Us Section -->
+    <section class="why-join-section" id="why-join">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Build Your Career With Us?</h2>
+                <p>At MG Buildcon, we don't just build structures - we build careers. Here's what makes us different:</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Opportunities</h3>
+                    <p>We invest in your professional development with training programs, mentorship, and clear career progression paths.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Culture</h3>
+                    <p>Work in teams where every voice matters, collaboration is encouraged, and innovation thrives.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Impactful Work</h3>
+                    <p>Contribute to landmark projects that shape skylines and communities for generations to come.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>We value your time outside work with flexible schedules and generous leave policies.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Comprehensive Benefits</h3>
+                    <p>Health insurance, retirement plans, and wellness programs to support your whole life.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Recognition</h3>
+                    <p>Your hard work doesn't go unnoticed with our employee recognition and reward programs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Open Positions Section -->
+      <section class="positions-section" id="positions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Current Openings</h2>
+                <p>Explore opportunities to join our growing team</p>
+            </div>
+            
+            <div class="department-filter">
+                <button class="filter-btn active" data-department="all">All Departments</button>
+                <button class="filter-btn" data-department="engineering">Engineering</button>
+                <button class="filter-btn" data-department="design">Design</button>
+                <button class="filter-btn" data-department="construction">Construction</button>
+                <button class="filter-btn" data-department="management">Management</button>
+                <button class="filter-btn" data-department="management">Accountant</button>
+            </div>
+            
+            <div class="positions-container">
+                <!-- Civil Engineer -->
+                <div class="position-card" data-department="engineering">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Civil Engineer</h3>
+                                <p>Engineering Department</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Plan, design, and oversee construction and maintenance of infrastructure projects</li>
+                                <li>Conduct site investigations and analyze data for project feasibility</li>
+                                <li>Prepare technical reports and cost estimates</li>
+                                <li>Ensure compliance with safety regulations and quality standards</li>
+                                <li>Coordinate with project stakeholders and construction teams</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering or related field</li>
+                                <li>2+ years experience in civil engineering projects</li>
+                                <li>Proficiency in AutoCAD and Civil 3D</li>
+                                <li>Knowledge of construction methods and materials</li>
+                                <li>Strong problem-solving and communication skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Infrastructure</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Construction</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Design Engineer -->
+                <div class="position-card" data-department="design">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Design Engineer</h3>
+                                <p>Design Studio</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Create detailed plans, blueprints, and technical specifications</li>
+                                <li>Develop construction documentation using CAD software</li>
+                                <li>Collaborate with architects and engineers on design solutions</li>
+                                <li>Review and modify designs to meet requirements</li>
+                                <li>Ensure designs comply with regulations and standards</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering or Architecture</li>
+                                <li>3+ years experience in design engineering</li>
+                                <li>Expertise in AutoCAD, Revit, and BIM software</li>
+                                <li>Strong technical drawing and documentation skills</li>
+                                <li>Knowledge of construction materials and methods</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">CAD</span>
+                            <span class="tag">Technical Drawing</span>
+                            <span class="tag">BIM</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Site Engineer -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Site Engineer</h3>
+                                <p>Field Operations</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Oversee technical aspects of construction projects</li>
+                                <li>Supervise work and ensure plans are followed</li>
+                                <li>Conduct quality control inspections</li>
+                                <li>Liaise with workers and subcontractors</li>
+                                <li>Maintain project documentation and reports</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>3+ years site engineering experience</li>
+                                <li>Knowledge of construction methods and materials</li>
+                                <li>Strong leadership and communication skills</li>
+                                <li>Ability to read and interpret technical drawings</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Construction</span>
+                            <span class="tag">Supervision</span>
+                            <span class="tag">Quality Control</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Construction Engineer -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Construction Engineer</h3>
+                                <p>Construction Management</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Manage and oversee construction processes</li>
+                                <li>Ensure efficiency and safety on site</li>
+                                <li>Monitor adherence to design specifications</li>
+                                <li>Coordinate maintenance and repair activities</li>
+                                <li>Implement quality control procedures</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Civil Engineering</li>
+                                <li>4+ years construction experience</li>
+                                <li>Knowledge of construction management principles</li>
+                                <li>Strong organizational and leadership skills</li>
+                                <li>Familiarity with safety regulations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Construction</span>
+                            <span class="tag">Management</span>
+                            <span class="tag">Quality Control</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Surveyor -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Land Surveyor</h3>
+                                <p>Survey Department</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Measure and map land for construction projects</li>
+                                <li>Establish boundaries, elevations, and site features</li>
+                                <li>Prepare survey reports and drawings</li>
+                                <li>Operate surveying equipment (GPS, total stations)</li>
+                                <li>Provide data for planning and construction layout</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Diploma/Degree in Surveying or Civil Engineering</li>
+                                <li>2+ years surveying experience</li>
+                                <li>Proficiency with surveying instruments and software</li>
+                                <li>Knowledge of surveying principles and techniques</li>
+                                <li>Ability to work outdoors in various conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Surveying</span>
+                            <span class="tag">Mapping</span>
+                            <span class="tag">GPS</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Accountant -->
+                <div class="position-card" data-department="management">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Accountant</h3>
+                                <p>Finance Department</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Manage all accounting transactions and financial records</li>
+                                <li>Prepare budget forecasts and financial statements</li>
+                                <li>Handle monthly, quarterly and annual closings</li>
+                                <li>Reconcile accounts payable and receivable</li>
+                                <li>Ensure timely tax payments and compliance</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Accounting or Finance</li>
+                                <li>2+ years accounting experience</li>
+                                <li>Thorough knowledge of accounting procedures</li>
+                                <li>Experience with accounting software (Tally, QuickBooks)</li>
+                                <li>Strong attention to detail and analytical skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Finance</span>
+                            <span class="tag">Accounting</span>
+                            <span class="tag">Taxation</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Correspondence -->
+                <div class="position-card" data-department="management">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Correspondence Executive</h3>
+                                <p>Administration</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Bengaluru, KA</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Handle all official correspondence and documentation</li>
+                                <li>Maintain records of incoming and outgoing communications</li>
+                                <li>Coordinate with various departments for approvals</li>
+                                <li>Prepare and dispatch official letters and documents</li>
+                                <li>Maintain confidentiality of sensitive information</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Business Administration or related field</li>
+                                <li>2+ years experience in administrative role</li>
+                                <li>Excellent written and verbal communication skills</li>
+                                <li>Proficiency in MS Office and documentation software</li>
+                                <li>Strong organizational and time management skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Administration</span>
+                            <span class="tag">Communication</span>
+                            <span class="tag">Documentation</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quantity Surveyor -->
+                <div class="position-card" data-department="construction">
+                    <div class="position-header">
+                        <div class="position-title">
+                            <div class="position-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="position-title-text">
+                                <h3>Quantity Surveyor</h3>
+                                <p>Cost Management</p>
+                            </div>
+                        </div>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Multiple Locations</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span class="meta-item"><i class="fas fa-rupee-sign"></i> Competitive Salary</span>
+                        </div>
+                    </div>
+                    <div class="position-details">
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <ul>
+                                <li>Prepare cost estimates and budgets for construction projects</li>
+                                <li>Analyze project specifications and drawings</li>
+                                <li>Monitor project costs and report on financial progress</li>
+                                <li>Negotiate with suppliers and subcontractors</li>
+                                <li>Prepare tender and contract documents</li>
+                            </ul>
+                        </div>
+                        <div class="detail-section">
+                            <h4>Requirements:</h4>
+                            <ul>
+                                <li>Bachelor's degree in Quantity Surveying or Civil Engineering</li>
+                                <li>3+ years experience in quantity surveying</li>
+                                <li>Knowledge of construction materials and costs</li>
+                                <li>Proficiency in quantity surveying software</li>
+                                <li>Strong negotiation and analytical skills</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="position-footer">
+                        <div class="position-tags">
+                            <span class="tag">Cost Estimation</span>
+                            <span class="tag">Budgeting</span>
+                            <span class="tag">Construction</span>
+                        </div>
+                        <a href="#" class="apply-btn">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="culture-grid">
+                <div class="culture-text">
+                    <h2>Our Work Culture</h2>
+                    <p>At MG Buildcon, we've created an environment where talent thrives. Our culture is built on collaboration, innovation, and mutual respect.</p>
+                    <p>We believe that great buildings start with great teams. That's why we foster a workplace where diverse perspectives are valued, where employees are empowered to take initiative, and where work-life balance is more than just a buzzword.</p>
+                    <p>From team-building retreats to continuous learning opportunities, we invest in our people because we know they're the foundation of our success.</p>
+                    <a href="#" class="btn">Learn More About Our Culture</a>
+                </div>
+                <div class="culture-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MG Buildcon Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Future With Us?</h2>
+                <p>Whether you're applying for a current opening or want to explore future opportunities, we'd love to hear from you.</p>
+                <div class="cta-buttons">
+                    <a href="#positions" class="btn">View Open Positions</a>
+                    <a href="#" class="btn btn-secondary">Submit Your Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compact Motivational Popup -->
+<div class="motivation-popup" id="motivationPopup">
+    <div class="popup-content">
+        <span class="close-popup">&times;</span>
+        <div class="card-icon">
+            <i class="fas fa-hard-hat"></i>
+        </div>
+        <h4>Build Your Legacy</h4>
+        <p class="card-quote">"Great buildings are the work of centuries."</p>
+        <button class="btn card-btn">Join Our Team</button>
+    </div>
+</div>
+
+    <!-- Footer Styles -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About MG Buildcon</h3>
+                    <p>Building dreams since 2025, MG Buildcon Pvt Ltd is committed to excellence in construction and design, creating spaces that inspire and endure.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="construction.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> No. 96/127, 1st floor, 7th Main Road,
+                        4th Block Jayanagar, Bangalore - 560011</p>
+                    <p><i class="fas fa-phone"></i> +91 9880166879 </p>
+                    <p><i class="fas fa-envelope"></i> mgbuildcon2025@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff6b00;"></i> by Jeevan K S</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                document.querySelector('header').classList.add('scrolled');
+            } else {
+                document.querySelector('header').classList.remove('scrolled');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('motivationPopup');
+        const closeBtn = document.querySelector('.close-popup');
+        const joinBtn = document.querySelector('.card-btn');
+        
+        // Show after 2 seconds
+        setTimeout(() => {
+            popup.classList.add('active');
+        }, 2000);
+        
+        
+        // Close buttons
+        closeBtn.addEventListener('click', () => popup.classList.remove('active'));
+        joinBtn.addEventListener('click', () => {
+            popup.classList.remove('active');
+            window.location.href = '#careers'; // Replace with your link
+        });
+        
+        // Close when clicking outside
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) popup.classList.remove('active');
+        });
+    });
+
+    // Add this script before the closing </body> tag
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all apply buttons
+    const applyButtons = document.querySelectorAll('.apply-btn');
+    
+    // Add click handler to each button
+    applyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get position title from the card
+            const positionCard = this.closest('.position-card');
+            const positionTitle = positionCard.querySelector('.position-title-text h3').textContent;
+            const department = positionCard.querySelector('.position-title-text p').textContent;
+            
+            // Create email subject and body
+            const subject = `Application for ${positionTitle} - ${department}`;
+            const body = `Dear Hiring Manager,\n\nI am interested in applying for the ${positionTitle} position at MG Buildcon.\n\nPlease find my resume attached.\n\nBest regards,\n[Your Name]`;
+            
+            // Encode for URL
+            const encodedSubject = encodeURIComponent(subject);
+            const encodedBody = encodeURIComponent(body);
+            
+            // Open default mail client
+            window.location.href = `mailto:careers@mgbuildcon.com?subject=${encodedSubject}&body=${encodedBody}`;
+        });
+    });
+});
+
+// Department Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const positionCards = document.querySelectorAll('.position-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            const department = button.dataset.department;
+            
+            // Show/hide position cards based on filter
+            positionCards.forEach(card => {
+                if (department === 'all' || card.dataset.department === department) {
+                    card.style.display = 'flex'; // Changed to flex to maintain card layout
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Check if there are no results
+            const visibleCards = document.querySelectorAll('.position-card[style="display: flex;"]');
+            const noResults = document.querySelector('.no-results');
+            
+            if (visibleCards.length === 0) {
+                if (!noResults) {
+                    // Create no results message if it doesn't exist
+                    const message = document.createElement('div');
+                    message.className = 'no-results';
+                    message.innerHTML = '<p>No positions found in this department. Please check back later.</p>';
+                    document.querySelector('.positions-container').appendChild(message);
+                }
+            } else {
+                // Remove no results message if it exists
+                if (noResults) {
+                    noResults.remove();
+                }
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>
