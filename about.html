@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | MG Buildcon Pvt Ltd</title>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T5B2C3K4');</script>
-<!-- End Google Tag Manager -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -365,151 +358,185 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.8;
         }
         
-       /* Single Team Card Styles */
-.team-card-single {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    max-width: 300px; /* Adjust width as needed */
-    margin: 0 auto; /* Center the card */
-}
-
-.team-card-single:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.team-image-single {
-    height: 300px;
-    overflow: hidden;
-}
-
-.team-image-single img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.team-card-single:hover .team-image-single img {
-    transform: scale(1.1);
-}
-
-.team-info-single {
-    padding: 25px;
-}
-
-.team-info-single h3 {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: #0056b3;
-}
-
-.team-info-single p {
-    color: #ff6b00;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.team-info-single .social-links-single {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.team-info-single .social-links-single a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    background-color: #f0f0f0;
-    color: #0056b3;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.team-info-single .social-links-single a:hover {
-    background-color: #0056b3;
-    color: white;
-    transform: translateY(-3px);
-}
+        /* Team Section */
+        .team-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
         
-/* Vision & Mission Section */
-.vision-mission-section {
-        padding: 80px 0;
-        background-color: #fff;
-        text-align: center;
-    }
-    
-    .vision-mission-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-        margin-top: 50px;
-    }
-    
-    .vision-card, .mission-card {
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        padding: 40px 30px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-    }
-    
-    .vision-card:hover, .mission-card:hover {
-        transform: translateY(-10px);
-    }
-    
-    .vision-icon, .mission-icon {
-        width: 80px;
-        height: 80px;
-        background-color: #0056b3;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 25px;
-        color: white;
-        font-size: 2rem;
-    }
-    
-    .mission-icon {
-        background-color: #ff6b00;
-    }
-    
-    .vision-card h3, .mission-card h3 {
-        font-size: 1.8rem;
-        color: #0056b3;
-        margin-bottom: 20px;
-    }
-    
-    .mission-card h3 {
-        color: #ff6b00;
-    }
-    
-    .vision-card p, .mission-card p {
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.8;
-    }
-    
-    @media (max-width: 768px) {
+        .team-section h2 {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .team-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ff6b00;
+        }
+        
+        .team-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        /* Team Card Styles */
+        .team-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-card:hover .team-image img {
+            transform: scale(1.1);
+        }
+        
+        .team-info {
+            padding: 25px;
+        }
+        
+        .team-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+        
+        .team-info p {
+            color: #ff6b00;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .team-info .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .team-info .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            background-color: #f0f0f0;
+            color: #0056b3;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .team-info .social-links a:hover {
+            background-color: #0056b3;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Vision & Mission Section */
+        .vision-mission-section {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+        
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
         .vision-card, .mission-card {
-            padding: 30px 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .vision-card:hover, .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .vision-icon, .mission-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #0056b3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .mission-icon {
+            background-color: #ff6b00;
         }
         
         .vision-card h3, .mission-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            color: #0056b3;
+            margin-bottom: 20px;
         }
-    }
+        
+        .mission-card h3 {
+            color: #ff6b00;
+        }
+        
+        .vision-card p, .mission-card p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .vision-card, .mission-card {
+                padding: 30px 20px;
+            }
+            
+            .vision-card h3, .mission-card h3 {
+                font-size: 1.5rem;
+            }
+        }
 
-    /* Quotes Slider Section */
-    .quotes-slider-section {
+        /* Quotes Slider Section */
+        .quotes-slider-section {
             padding: 80px 0;
             background-color: #f5f7fa;
             text-align: center;
@@ -789,7 +816,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             0% {
                 transform: scale(1);
             }
-            50% {
+           50% {
                 transform: scale(1.1);
             }
             100% {
@@ -958,11 +985,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5B2C3K4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -1070,21 +1092,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-  <!-- Single Team Card -->
-<div class="team-card-single">
-    <div class="team-image-single">
-        <img src="images/about-1.jpg" alt="Kushal Gowda K M - Founder & CEO">
-    </div>
-    <div class="team-info-single">
-        <h3>Kushal Gowda K M</h3>
-        <p>Founder & CEO</p>
-        <div class="social-links-single">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Our Leadership Team</h2>
+            <div class="team-container">
+                <!-- Founder -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/about-1.jpg" alt="Kushal Gowda K M - Founder & CEO">
+                    </div>
+                    <div class="team-info">
+                        <h3>Kushal Gowda K M</h3>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digital Marketing Head -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/image-2.jpg0" alt="Jeevan KS - Digital Marketing Head">
+                    </div>
+                    <div class="team-info">
+                        <h3>Jeevan KS</h3>
+                        <p>Digital Marketing Head</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Director of Resources -->
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="images/image-3.jpg0" alt="Darshan Gowda - Director of Resources">
+                    </div>
+                    <div class="team-info">
+                        <h3>Darshan Gowda</h3>
+                        <p>Director of Resources</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
        
 <!-- Add this section after the About Content Section and before the Single Team Card -->
 <section class="vision-mission-section">
