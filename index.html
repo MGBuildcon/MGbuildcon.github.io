@@ -381,6 +381,208 @@
             margin: 0 auto;
         }
         
+        /* Special Offer Popup Styles */
+        .special-offer-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .special-offer-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: translateY(50px) scale(0.9);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .special-offer-popup.active .popup-content {
+            transform: translateY(0) scale(1);
+        }
+        
+        .popup-header {
+            background: linear-gradient(90deg, #0056b3 0%, #003d82 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .popup-header h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .popup-header p {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+        }
+        
+        .popup-body {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .offer-badge {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #0056b3;
+            font-size: 2rem;
+            font-weight: 800;
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin: 15px 0;
+            transform: rotate(-5deg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        .popup-body p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .highlight {
+            color: #0056b3;
+            font-weight: 600;
+        }
+        
+        .popup-footer {
+            padding: 0 25px 25px;
+            text-align: center;
+        }
+        
+        .claim-offer-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD700 0%, #e6c200 100%);
+            color: #0056b3;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .claim-offer-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-popup:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        .construction-icon {
+            font-size: 3rem;
+            margin: 10px 0;
+            color: #0056b3;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .popup-content {
+                width: 95%;
+            }
+            
+            .popup-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .offer-badge {
+                font-size: 1.7rem;
+                padding: 8px 20px;
+            }
+            
+            .popup-body p {
+                font-size: 1rem;
+            }
+            
+            .claim-offer-btn {
+                font-size: 1.1rem;
+                padding: 12px 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .popup-header {
+                padding: 15px;
+            }
+            
+            .popup-header h3 {
+                font-size: 1.3rem;
+            }
+            
+            .popup-header p {
+                font-size: 1rem;
+            }
+            
+            .popup-body, .popup-footer {
+                padding: 20px;
+            }
+            
+            .offer-badge {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Animation for the badge */
+        @keyframes pulse {
+            0% {
+                transform: rotate(-5deg) scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                transform: rotate(-5deg) scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            }
+            100% {
+                transform: rotate(-5deg) scale(1);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+        }
+
         /* Header Styles */
         header {
             background-color: #fff;
@@ -2396,6 +2598,27 @@
         </div>
     </div>
 
+     <!-- Special Offer Popup -->
+    <div class="special-offer-popup" id="specialOfferPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>🏗️ MG Buildcon Special Offer!</h3>
+                <p>Limited Time Only</p>
+                <div class="close-popup" id="closePopup">✕</div>
+            </div>
+            <div class="popup-body">
+                <div class="construction-icon">🏠</div>
+                <div class="offer-badge">15% OFF</div>
+                <p>Get <span class="highlight">15% OFF</span> on all our construction packages! 🎉</p>
+                <p>This exclusive offer includes our premium residential, commercial, and interior design services.</p>
+                <p class="highlight">Hurry – Limited Time Only!</p>
+            </div>
+            <div class="popup-footer">
+                <a href="contact.html" class="claim-offer-btn">Claim Your Discount Now</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -2938,6 +3161,27 @@
             });
         });
 
+        // Show special offer popup after loader
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for loader to complete
+            setTimeout(function() {
+                const popup = document.getElementById('specialOfferPopup');
+                popup.classList.add('active');
+                
+                // Close popup functionality
+                document.getElementById('closePopup').addEventListener('click', function() {
+                    popup.classList.remove('active');
+                });
+                
+                // Close when clicking outside content
+                popup.addEventListener('click', function(e) {
+                    if (e.target === popup) {
+                        popup.classList.remove('active');
+                    }
+                });
+            }, 5000); // Show popup 5 seconds after page load (adjust as needed)
+        });
+
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger');
@@ -3306,3 +3550,4 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 </body>
 </html>
+
