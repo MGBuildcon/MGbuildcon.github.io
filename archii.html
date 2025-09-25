@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MG Buildcon Architects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #d4af37; /* Golden color */
+            --secondary: #1a1a1a; /* Dark background */
+            --accent: #2c5530; /* MG Buildcon green accent */
+            --light: #f8f8f8;
+            --gray: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(26, 26, 26, 0.95);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2.5rem;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light);
+        }
+
+        /* Enhanced Hero Section with Architecture Animation */
+        .about-hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .about-hero-content p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.5s ease 0.5s both;
+        }
+
+        .hero-cta {
+            animation: fadeInUp 1.5s ease 1s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            border: 2px solid var(--primary);
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Architectural Building Animation */
+        .buildings-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .building {
+            width: 80px;
+            margin: 0 10px;
+            background: linear-gradient(to top, #333, #555);
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            position: relative;
+            animation: buildingFloat 6s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .building:nth-child(2) {
+            height: 180px;
+            animation-delay: 0.5s;
+            background: linear-gradient(to top, #2c5530, #3a7a40);
+        }
+
+        .building:nth-child(3) {
+            height: 220px;
+            animation-delay: 1s;
+        }
+
+        .building:nth-child(4) {
+            height: 160px;
+            animation-delay: 1.5s;
+            background: linear-gradient(to top, #2c5530, #3a7a40);
+        }
+
+        .building:nth-child(5) {
+            height: 200px;
+            animation-delay: 2s;
+        }
+
+        .building:nth-child(6) {
+            height: 140px;
+            animation-delay: 2.5s;
+        }
+
+        .building:nth-child(7) {
+            height: 180px;
+            animation-delay: 3s;
+            background: linear-gradient(to top, #2c5530, #3a7a40);
+        }
+
+        .window {
+            position: absolute;
+            width: 15px;
+            height: 20px;
+            background-color: #ffd700;
+            border-radius: 2px;
+            animation: windowGlow 3s infinite alternate;
+        }
+
+        /* Window placements */
+        .building:nth-child(2) .window:nth-child(1) { top: 30px; left: 15px; }
+        .building:nth-child(2) .window:nth-child(2) { top: 30px; right: 15px; }
+        .building:nth-child(2) .window:nth-child(3) { top: 70px; left: 15px; }
+        .building:nth-child(2) .window:nth-child(4) { top: 70px; right: 15px; }
+        .building:nth-child(2) .window:nth-child(5) { top: 110px; left: 15px; }
+        .building:nth-child(2) .window:nth-child(6) { top: 110px; right: 15px; }
+
+        .building:nth-child(3) .window:nth-child(1) { top: 25px; left: 15px; }
+        .building:nth-child(3) .window:nth-child(2) { top: 25px; right: 15px; }
+        .building:nth-child(3) .window:nth-child(3) { top: 60px; left: 15px; }
+        .building:nth-child(3) .window:nth-child(4) { top: 60px; right: 15px; }
+        .building:nth-child(3) .window:nth-child(5) { top: 95px; left: 15px; }
+        .building:nth-child(3) .window:nth-child(6) { top: 95px; right: 15px; }
+        .building:nth-child(3) .window:nth-child(7) { top: 130px; left: 15px; }
+        .building:nth-child(3) .window:nth-child(8) { top: 130px; right: 15px; }
+        .building:nth-child(3) .window:nth-child(9) { top: 165px; left: 15px; }
+        .building:nth-child(3) .window:nth-child(10) { top: 165px; right: 15px; }
+
+        @keyframes buildingFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes windowGlow {
+            0% {
+                opacity: 0.7;
+                box-shadow: 0 0 5px #ffd700;
+            }
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Content Sections */
+        .about-section {
+            padding: 5rem 10%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .about-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        /* Philosophy Section */
+        .philosophy-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .philosophy-text {
+            flex: 1;
+        }
+
+        .philosophy-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .philosophy-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .philosophy-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .philosophy-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .service-card:hover:before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* Strengths Section */
+        .strengths-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .strength-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strength-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .strength-item:hover:before {
+            transform: scaleX(1);
+        }
+
+        .strength-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .strength-item:hover h3,
+        .strength-item:hover .strength-icon {
+            color: white;
+        }
+
+        .strength-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .strength-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        /* Vision Mission Section */
+        .vision-mission {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 5rem 10%;
+            text-align: center;
+        }
+
+        .vision-mission .section-title h2 {
+            color: var(--light);
+        }
+
+        .vm-container {
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .vision, .mission {
+            flex: 1;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision:before, .mission:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .vision:hover:before, .mission:hover:before {
+            transform: translateX(100%);
+        }
+
+        .vision:hover, .mission:hover {
+            transform: translateY(-10px);
+        }
+
+        .vm-container h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            padding: 5rem 10%;
+            text-align: center;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reason {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+            z-index: -1;
+        }
+
+        .reason:hover:after {
+            height: 100%;
+        }
+
+        .reason:hover {
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .reason-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .reason:hover .reason-icon {
+            color: white;
+            transform: rotate(360deg);
+        }
+
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--secondary);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 250px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image:before {
+            content: "Project Image";
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .project-location {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-location i {
+            margin-right: 0.5rem;
+        }
+
+        .project-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-detail {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-detail span:first-child {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .project-detail span:last-child {
+            color: #666;
+        }
+
+        .project-client {
+            border-top: 1px solid var(--gray);
+            padding-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 3rem 10% 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .philosophy-content {
+                flex-direction: column;
+            }
+            
+            .vm-container {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+                z-index: 1000;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 1.5rem 0;
+            }
+
+            .about-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-section {
+                padding: 3rem 5%;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .footer-content, .contact-container {
+                flex-direction: column;
+            }
+
+            .footer-logo, .footer-links, .footer-contact {
+                text-align: center;
+            }
+
+            .building {
+                width: 50px;
+                margin: 0 5px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .about-hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .service-card, .strength-item, .reason {
+                padding: 1.5rem;
+            }
+
+            .building {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">MG <span>Buildcon Architects</span></a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Enhanced Hero Section with Architecture Animation -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>MG Buildcon Architects</h1>
+            <p>Creators of spaces that inspire, sustain, and stand the test of time</p>
+            <div class="hero-cta">
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+        
+        <!-- Animated Buildings -->
+        <div class="buildings-container">
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+            <div class="building">
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="about-section" id="intro">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Who We Are</h2>
+            </div>
+            <div class="intro-text">
+                <p>At MG Buildcon Architects, we are more than just builders — we are creators of spaces that inspire, sustain, and stand the test of time. Established with a vision to redefine architectural excellence and modern living, MG Buildcon Architects has steadily grown into a trusted name in the field of architecture, construction, and real estate development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="about-section" id="philosophy">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Our Philosophy</h2>
+            </div>
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <p>We believe that a building is not just a structure made of concrete and steel, but a reflection of dreams, aspirations, and lifestyles. Every project we take on is designed to balance aesthetic appeal, functional design, and long-term value. Our work is driven by a deep respect for craftsmanship, sustainability, and innovation.</p>
+                    <p>Our approach combines creative vision with technical expertise to deliver spaces that not only meet but exceed our clients' expectations. We see each project as an opportunity to create something meaningful that will endure for generations.</p>
+                </div>
+                <div class="philosophy-image">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Architectural Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="about-section" id="services">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>What We Do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Residential Projects</h3>
+                    <p>Creating homes that bring comfort, elegance, and practicality to everyday living.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Commercial Spaces</h3>
+                    <p>Designing modern business environments that encourage growth, collaboration, and productivity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Industrial & Infrastructure</h3>
+                    <p>Delivering robust, efficient, and future-ready developments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section class="about-section" id="strengths">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Our Strengths</h2>
+            </div>
+            <div class="strengths-container">
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Every project undergoes rigorous quality checks to meet the highest industry standards.</p>
+                </div>
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation in Design</h3>
+                    <p>Blending creativity with cutting-edge technology to craft unique and functional spaces.</p>
+                </div>
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Transparency & Trust</h3>
+                    <p>Maintaining clear communication and ethical practices in every step of the journey.</p>
+                </div>
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Timely Delivery</h3>
+                    <p>Efficient project management ensures that we deliver as promised, without compromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section class="vision-mission about-section" id="vision-mission">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Our Vision & Mission</h2>
+            </div>
+            <div class="vm-container">
+                <div class="vision">
+                    <h3>Our Vision</h3>
+                    <p>To be a leader in architecture and construction by shaping sustainable spaces that enrich lives and communities.</p>
+                </div>
+                <div class="mission">
+                    <h3>Our Mission</h3>
+                    <p>To design and deliver world-class projects with integrity, innovation, and excellence, while keeping customer satisfaction at the core of everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us about-section" id="why-choose">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Why Choose MG Buildcon Architects?</h2>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason">
+                    <div class="reason-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Years of expertise with a team of skilled professionals passionate about building with purpose.</p>
+                </div>
+                <div class="reason">
+                    <div class="reason-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Proven Excellence</h3>
+                    <p>Every project is a lasting symbol of trust and excellence from foundation to finishing touch.</p>
+                </div>
+                <div class="reason">
+                    <div class="reason-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Client-Centric Approach</h3>
+                    <p>We are committed to turning your ideas into enduring realities with personalized service.</p>
+                </div>
+                <div class="reason">
+                    <div class="reason-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Practices</h3>
+                    <p>We integrate eco-friendly solutions to create buildings that respect the environment.</p>
+                </div>
+            </div>
+            <div class="intro-text" style="margin-top: 3rem;">
+                <p><strong>MG Buildcon Architects – Building Dreams, Designing Futures.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="section-title">
+            <h2>Featured Residential Projects</h2>
+        </div>
+
+        <div class="projects-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="villa">Villas</button>
+            <button class="filter-btn" data-filter="apartment">Apartments</button>
+            <button class="filter-btn" data-filter="bungalow">Bungalows</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card" data-category="villa">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Luxury Villa in Whitefield</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Whitefield, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>4500 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2023</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Villa</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Mr. & Mrs. Rajesh Kumar
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card" data-category="apartment">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Modern Apartment in Koramangala</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Koramangala, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>1800 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2022</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Apartment</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Dr. Priya Sharma
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card" data-category="bungalow">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Heritage Bungalow in Sadashivanagar</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Sadashivanagar, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>5200 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2021</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Bungalow</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Mr. Anil Mehta
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card" data-category="villa">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Contemporary Villa in HSR Layout</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> HSR Layout, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>3800 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2023</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Villa</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Mr. & Mrs. Sanjay Patel
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card" data-category="apartment">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Penthouse in Indiranagar</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Indiranagar, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>2400 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2022</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Apartment</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Ms. Kavita Reddy
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card" data-category="bungalow">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Modern Bungalow in JP Nagar</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> JP Nagar, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>3500 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2020</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Bungalow</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Mr. Vikram Singh
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card" data-category="villa">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Luxury Villa in Yelahanka</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Yelahanka, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>4200 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2022</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Villa</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Mr. & Mrs. Ramesh Iyer
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card" data-category="apartment">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Duplex Apartment in Malleshwaram</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Malleshwaram, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>2200 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2021</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Apartment</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Dr. & Mrs. Aruna Desai
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card" data-category="bungalow">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Eco-Friendly Bungalow in Bannerghatta</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Bannerghatta, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>4800 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2023</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Bungalow</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Mr. Deepak Joshi
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project-card" data-category="villa">
+                <div class="project-image">
+                    <!-- Image placeholder - you can add your image here -->
+                </div>
+                <div class="project-info">
+                    <h3>Minimalist Villa in Electronic City</h3>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt"></i> Electronic City, Bangalore
+                    </div>
+                    <div class="project-details">
+                        <div class="project-detail">
+                            <span>Area</span>
+                            <span>3200 sq.ft.</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Year</span>
+                            <span>2022</span>
+                        </div>
+                        <div class="project-detail">
+                            <span>Type</span>
+                            <span>Villa</span>
+                        </div>
+                    </div>
+                    <div class="project-client">
+                        Client: Ms. Sunita Gupta
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>MG Buildcon Architects</h3>
+                <p>Creators of spaces that inspire, sustain, and stand the test of time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jayanagar, Bangalore - 560011</p>
+                <p><i class="fas fa-phone"></i> +91 9880166879</p>
+                <p><i class="fas fa-envelope"></i> mgbuildcon@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MG Buildcon Architects. All Rights Reserved. | Designed <i class="" style="color: #ff6b00;"></i> by Jeevan K S</p></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Scroll Animation for Sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutSections = document.querySelectorAll('.about-section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            aboutSections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        document.querySelector('nav ul').classList.remove('active');
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.background = 'rgba(26, 26, 26, 0.98)';
+                    header.style.padding = '1rem 5%';
+                } else {
+                    header.style.background = 'rgba(26, 26, 26, 0.95)';
+                    header.style.padding = '1.5rem 5%';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

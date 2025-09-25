@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Packages - MG Buildcon Architects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #d4af37; /* Golden color */
+            --secondary: #1a1a1a; /* Dark background */
+            --accent: #2c5530; /* MG Buildcon green accent */
+            --light: #f8f8f8;
+            --gray: #e0e0e0;
+            --silver: #c0c0c0;
+            --gold: #ffd700;
+            --diamond: #b9f2ff;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(26, 26, 26, 0.95);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: var(--light);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2.5rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .packages-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .packages-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(44, 85, 48, 0.1));
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.3; }
+        }
+
+        .packages-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .packages-hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.5s ease 0.5s both;
+        }
+
+        /* Packages Section */
+        .packages-section {
+            padding: 5rem 10%;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .packages-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .packages-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 380px;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .package-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .package-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .package-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-header {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+
+        .package-card:hover .package-header::before {
+            transform: translateX(100%);
+        }
+
+        .silver .package-header {
+            background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+        }
+
+        .gold .package-header {
+            background: linear-gradient(135deg, #ffd700, #e6c200);
+        }
+
+        .diamond .package-header {
+            background: linear-gradient(135deg, #b9f2ff, #89d1e6);
+        }
+
+        .package-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: transform 0.5s ease;
+        }
+
+        .package-card:hover .package-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .package-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-dimension {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .package-features {
+            padding: 2rem;
+        }
+
+        .package-features h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            text-align: center;
+            border-bottom: 1px solid var(--gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .features-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li i {
+            margin-right: 1rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .features-list li:hover i {
+            transform: scale(1.2);
+        }
+
+        .package-cta {
+            padding: 0 2rem 2rem;
+            text-align: center;
+        }
+
+        .package-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .package-btn:hover::before {
+            left: 100%;
+        }
+
+        .package-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .package-note {
+            text-align: center;
+            margin-top: 3rem;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 5rem 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNMCA1MEg1MFYxMDBINHoiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMiIvPjwvc3ZnPg==');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-100px) translateX(-100px); }
+        }
+
+        .comparison-section .section-title h2 {
+            color: var(--light);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            color: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .comparison-table th:hover {
+            background: #e6c200;
+        }
+
+        .comparison-table td {
+            padding: 1.2rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.3s ease;
+        }
+
+        .comparison-table tr:hover td {
+            background: #f9f9f9;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .feature-name {
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .comparison-table .included {
+            color: #2c5530;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table .not-included {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 10%;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f9f9f9;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, #2a2a2a 100%);
+            color: var(--light);
+            padding: 5rem 10%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjAyIi8+PC9zdmc+');
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.05; }
+            50% { transform: scale(1.1); opacity: 0.1; }
+        }
+
+        .contact-section .section-title h2 {
+            color: var(--light);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 3rem 10% 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-contact {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1024px) {
+            .packages-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .package-card {
+                max-width: 500px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+                z-index: 1000;
+            }
+
+            nav ul.active {
+                left: 0;
+            }
+
+            nav ul li {
+                margin: 1.5rem 0;
+            }
+
+            .packages-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .packages-section, .comparison-section, .faq-section {
+                padding: 3rem 5%;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-logo, .footer-links, .footer-contact {
+                text-align: center;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .packages-hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .packages-hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .package-header {
+                padding: 1.5rem;
+            }
+
+            .package-features {
+                padding: 1.5rem;
+            }
+
+            .comparison-table th, 
+            .comparison-table td {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="index.html" class="logo">MG <span>Buildcon Architects</span></a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="packages-hero">
+        <div class="packages-hero-content">
+            <h1>Architecture Packages</h1>
+            <p>Choose the perfect package for your residential project needs</p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <div class="section-title">
+            <h2>Our Architecture Packages</h2>
+        </div>
+        
+        <div class="packages-intro">
+            <p>At MG Buildcon Architects, we offer comprehensive architecture packages tailored to meet your specific requirements. Whether you need basic floor plans or full architectural services, we have a package that's right for you.</p>
+        </div>
+        
+        <div class="packages-container">
+            <!-- Silver Package -->
+            <div class="package-card silver">
+                <div class="package-header">
+                    <div class="package-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="package-name">Silver Package</div>
+                    <div class="package-price">INR 40,000/-</div>
+                    <div class="package-dimension">(for 30×40) (G + 3)</div>
+                    <div class="package-price">INR 50,000/-</div>
+                    <div class="package-dimension">(for 40×60) (G + 3)</div>
+                </div>
+                <div class="package-features">
+                    <h3>Package Features</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Concept Floor Plan</li>
+                        <li><i class="fas fa-check"></i> Floor Plan Changes</li>
+                        <li><i class="fas fa-check"></i> Final Floor Plan</li>
+                        <li><i class="fas fa-check"></i> 3D Elevation</li>
+                        <li><i class="fas fa-check"></i> Working Drawings (Floor Plan)</li>
+                        <li><i class="fas fa-check"></i> 2D Elevation Details</li>
+                    </ul>
+                </div>
+                <div class="package-cta">
+                    <a href="contact.html" class="package-btn">Choose Silver Package</a>
+                </div>
+            </div>
+            
+            <!-- Gold Package -->
+            <div class="package-card gold">
+                <div class="package-header">
+                    <div class="package-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="package-name">Gold Package</div>
+                    <div class="package-price">INR 80,000/-</div>
+                    <div class="package-dimension">(for 30×40) (G + 3)</div>
+                    <div class="package-price">INR 1,10,000/-</div>
+                    <div class="package-dimension">(for 40×60) (G + 3)</div>
+                </div>
+                <div class="package-features">
+                    <h3>Package Features</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Concept Floor Plan</li>
+                        <li><i class="fas fa-check"></i> Floor Plan Changes</li>
+                        <li><i class="fas fa-check"></i> Final Floor Plan</li>
+                        <li><i class="fas fa-check"></i> 3D Elevation</li>
+                        <li><i class="fas fa-check"></i> Structural Drawings</li>
+                        <li><i class="fas fa-check"></i> All Working Drawings</li>
+                        <li><i class="fas fa-check"></i> 2D Elevation</li>
+                        <li><i class="fas fa-check"></i> Building Estimation</li>
+                    </ul>
+                </div>
+                <div class="package-cta">
+                    <a href="contact.html" class="package-btn">Choose Gold Package</a>
+                </div>
+            </div>
+            
+            <!-- Diamond Package -->
+            <div class="package-card diamond">
+                <div class="package-header">
+                    <div class="package-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="package-name">Diamond Package</div>
+                    <div class="package-price">INR 1,50,000/-</div>
+                    <div class="package-dimension">(for 30×40) (G + 3)</div>
+                    <div class="package-price">INR 1,90,000/-</div>
+                    <div class="package-dimension">(for 40×60) (G + 3)</div>
+                </div>
+                <div class="package-features">
+                    <h3>Package Features</h3>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Concept Floor Plan</li>
+                        <li><i class="fas fa-check"></i> Floor Plan Changes</li>
+                        <li><i class="fas fa-check"></i> Final Floor Plan</li>
+                        <li><i class="fas fa-check"></i> 3D Elevation</li>
+                        <li><i class="fas fa-check"></i> Structural Drawings</li>
+                        <li><i class="fas fa-check"></i> 2D Elevation</li>
+                        <li><i class="fas fa-check"></i> Electrical Drawings</li>
+                        <li><i class="fas fa-check"></i> Plumbing Drawings</li>
+                        <li><i class="fas fa-check"></i> Architectural Details</li>
+                        <li><i class="fas fa-check"></i> All Working Drawings</li>
+                        <li><i class="fas fa-check"></i> Building Estimation</li>
+                        <li><i class="fas fa-check"></i> Structural Site Visit</li>
+                        <li><i class="fas fa-check"></i> Coordination With Contractor</li>
+                        <li><i class="fas fa-check"></i> Periodic Site Visits Until Completion</li>
+                    </ul>
+                </div>
+                <div class="package-cta">
+                    <a href="contact.html" class="package-btn">Choose Diamond Package</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="package-note">
+            <p>* Prices are approximate and may vary based on specific project requirements.</p>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="section-title">
+            <h2>Package Comparison</h2>
+        </div>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Silver</th>
+                    <th>Gold</th>
+                    <th>Diamond</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="feature-name">Concept Floor Plan</td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Floor Plan Changes</td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Final Floor Plan</td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">3D Elevation</td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Working Drawings (Floor Plan)</td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">2D Elevation Details</td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Structural Drawings</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">All Working Drawings</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Building Estimation</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Electrical Drawings</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Plumbing Drawings</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Architectural Details</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Structural Site Visit</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Coordination With Contractor</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Periodic Site Visits</td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="not-included"><i class="fas fa-times"></i></td>
+                    <td class="included"><i class="fas fa-check"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is included in the Silver Package?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Silver Package includes concept floor plan development, floor plan changes, final floor plan, 3D elevation, working drawings (floor plan), and 2D elevation details. This package is ideal for clients who need basic architectural services for approval and construction.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does it take to complete a project?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The timeline depends on the package selected and the complexity of the project. Typically, Silver Package projects take 2-3 weeks, Gold Package projects take 3-4 weeks, and Diamond Package projects take 4-6 weeks for completion of drawings.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I upgrade my package later?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you can upgrade your package at any stage of the project. The cost will be adjusted accordingly based on the work already completed and the additional services required.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you provide site visits with all packages?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Site visits are included only in the Diamond Package. For Silver and Gold Packages, initial site measurement is included, but ongoing site visits are not part of the package.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Are the prices fixed or negotiable?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The prices mentioned are approximate and for standard projects. Final pricing may vary based on specific requirements, site conditions, and project complexity. We offer customized quotes after understanding your specific needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section-title">
+            <h2>Ready to Start Your Project?</h2>
+        </div>
+        <p class="contact-text">Contact us today to discuss your requirements and get a customized quote for your residential project.</p>
+        <a href="contact.html" class="cta-button">Get In Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>MG Buildcon Architects</h3>
+                <p>Creators of spaces that inspire, sustain, and stand the test of time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jayanagar, Bangalore - 560011</p>
+                <p><i class="fas fa-phone"></i> +91 9880166879</p>
+                <p><i class="fas fa-envelope"></i> mgbuildcon@gmail.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MG Buildcon Architects. All Rights Reserved. | Designed <i class="" style="color: #ff6b00;"></i> by Jeevan K S</p></p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                const scrollTop = window.scrollY;
+                
+                if (scrollTop > 100) {
+                    header.style.background = 'rgba(26, 26, 26, 0.98)';
+                    header.style.padding = '1rem 5%';
+                } else {
+                    header.style.background = 'rgba(26, 26, 26, 0.95)';
+                    header.style.padding = '1.5rem 5%';
+                }
+                
+                // Scroll to top button visibility
+                const scrollToTopBtn = document.querySelector('.scroll-to-top');
+                if (scrollTop > 300) {
+                    scrollToTopBtn.classList.add('active');
+                } else {
+                    scrollToTopBtn.classList.remove('active');
+                }
+            });
+            
+            // Scroll to top functionality
+            document.querySelector('.scroll-to-top').addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.package-card, .section-title, .faq-item');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initialize animation states
+            document.querySelectorAll('.package-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', animateOnScroll);
+            // Initial check on page load
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
