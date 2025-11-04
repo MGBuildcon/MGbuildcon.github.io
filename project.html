@@ -357,6 +357,7 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         
         .project-card:hover {
@@ -364,21 +365,85 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        .project-image {
+        .image-gallery {
+            position: relative;
             height: 250px;
             overflow: hidden;
-            position: relative;
         }
         
-        .project-image img {
+        .gallery-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+        
+        .gallery-slide {
+            min-width: 100%;
+            height: 100%;
+        }
+        
+        .gallery-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
         
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .gallery-nav {
+            opacity: 1;
+        }
+        
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .gallery-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-dot.active {
+            background: white;
+            transform: scale(1.2);
         }
         
         .project-info {
@@ -468,88 +533,6 @@
         .project-link:hover {
             background-color: #003d82;
             transform: translateY(-2px);
-        }
-        
-        /* Image Gallery Styles */
-        .image-gallery {
-            position: relative;
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .gallery-slides {
-            display: flex;
-            transition: transform 0.5s ease;
-            height: 100%;
-        }
-        
-        .gallery-slide {
-            min-width: 100%;
-            height: 100%;
-        }
-        
-        .gallery-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .gallery-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .project-card:hover .gallery-nav {
-            opacity: 1;
-        }
-        
-        .gallery-btn {
-            background: rgba(255, 255, 255, 0.7);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-btn:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
-        .gallery-dots {
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .gallery-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-dot.active {
-            background: white;
-            transform: scale(1.2);
         }
         
         /* Load More Button */
@@ -923,7 +906,6 @@
                             <div class="gallery-slide">
                                 <img src="Images 1/j2.jpg" alt="JP Nagar Residence - Kitchen">
                             </div>
-                            </div>
                         </div>
                         <div class="gallery-nav">
                             <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
@@ -931,7 +913,6 @@
                         </div>
                         <div class="gallery-dots">
                             <button class="gallery-dot active"></button>
-                            <button class="gallery-dot"></button>
                             <button class="gallery-dot"></button>
                             <button class="gallery-dot"></button>
                         </div>
@@ -1046,55 +1027,13 @@
                         <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
-
-                <!-- Project 4 - Banashankari -->
-                <div class="project-card" data-category="residential completed">
-                    <div class="image-gallery">
-                        <div class="gallery-slides">
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Banashankari - Exterior">
-                            </div>
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Banashankari - Living Area">
-                            </div>
-                        </div>
-                        <div class="gallery-nav">
-                            <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="gallery-dots">
-                            <button class="gallery-dot active"></button>
-                            <button class="gallery-dot"></button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Banashankari</h3>
-                        <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i> Banashankari 6th Stage Turahalli, Bengaluru
-                        </div>
-                        <div class="project-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-home"></i> Ground+3 Floors
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i> 1200 sq.ft
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-calendar-alt"></i> 2025
-                            </div>
-                        </div>
-                        <span class="project-status status-completed">Ongoing</span>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
                 
-                
-                <!-- Project 6 - Upcoming Project -->
+                <!-- Project 4 - Upcoming Project -->
                 <div class="project-card" data-category="residential upcoming">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="Images 1/kengeri.jpg" alt="MG Green Valley - Site">
+                                <img src="Images 1/kengeri.jpg" alt="Kengeri - Site">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -1103,7 +1042,6 @@
                         </div>
                         <div class="gallery-dots">
                             <button class="gallery-dot active"></button>
-                            <button class="gallery-dot"></button>
                         </div>
                     </div>
                     <div class="project-info">
