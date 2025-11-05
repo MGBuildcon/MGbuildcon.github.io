@@ -375,17 +375,24 @@
             display: flex;
             transition: transform 0.5s ease;
             height: 100%;
+            width: 100%;
         }
         
         .gallery-slide {
             min-width: 100%;
             height: 100%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         
         .gallery-slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
         
         .gallery-nav {
@@ -926,6 +933,7 @@
                             <button class="gallery-dot"></button>
                             <button class="gallery-dot"></button>
                             <button class="gallery-dot"></button>
+                            <button class="gallery-dot"></button>
                         </div>
                     </div>
                     <div class="project-info">
@@ -1056,6 +1064,7 @@
         </div>
         <div class="gallery-dots">
             <button class="gallery-dot active"></button>
+            <button class="gallery-dot"></button>
             <button class="gallery-dot"></button>
             <button class="gallery-dot"></button>
         </div>
@@ -1276,8 +1285,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
