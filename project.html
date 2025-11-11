@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reuse all the same styles from the main page */
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -34,7 +33,7 @@
             margin: 0 auto;
         }
         
-        /* Header Styles - Same as index.html */
+        /* Header Styles */
         header {
             background-color: #fff;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -96,7 +95,7 @@
             align-items: center;
             gap: 5px;
             margin-left: 20px;
-            color: #FFD700; /* Yellow color */
+            color: #FFD700;
             font-weight: 600;
         }
         
@@ -241,7 +240,7 @@
                         url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             color: white;
             text-align: center;
-            padding-top: 80px; /* Account for fixed header */
+            padding-top: 80px;
         }
         
         .projects-hero-content {
@@ -365,10 +364,12 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
+        /* Fixed Image Gallery Styles */
         .image-gallery {
             position: relative;
             height: 250px;
             overflow: hidden;
+            width: 100%;
         }
         
         .gallery-slides {
@@ -817,11 +818,6 @@
             .footer-section {
                 text-align: center;
             }
-            
-            .newsletter-form {
-                max-width: 300px;
-                margin: 0 auto;
-            }
         }
     </style>
 </head>
@@ -831,7 +827,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <!-- Header Section - Same as index.html -->
+    <!-- Header Section -->
     <header>
         <div class="container">
             <nav class="navbar">
@@ -900,18 +896,27 @@
             </div>
             
             <div class="grid-container">
-                <!-- Project 1 -->
+                <!-- Project 1 - JP Nagar -->
                 <div class="project-card" data-category="residential ongoing">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JP Nagar Residence - Exterior">
+                                <img src="Images 1/elevation jp nagar main photo .jpg" alt="JP Nagar Residence - Exterior">
                             </div>
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JP Nagar Residence - Interior">
+                                <img src="jp nagar/j1.jpg" alt="JP Nagar Residence - Living Room">
                             </div>
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="JP Nagar Residence - Kitchen">
+                                <img src="jp nagar/j2.jpg" alt="JP Nagar Residence - Kitchen">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="jp nagar/j3.jpg" alt="JP Nagar Residence - Kitchen">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="jp nagar/j4.jpg" alt="JP Nagar Residence - Kitchen">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="jp nagar/j5.jpg" alt="JP Nagar Residence - Kitchen">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -922,12 +927,15 @@
                             <button class="gallery-dot active"></button>
                             <button class="gallery-dot"></button>
                             <button class="gallery-dot"></button>
+                            <button class="gallery-dot"></button>
+                            <button class="gallery-dot"></button>
+                            <button class="gallery-dot"></button>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>JP Nagar Residence Ganpathipura</h3>
                         <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i>JP Nagar Residence, Bengaluru
+                            <i class="fas fa-map-marker-alt"></i> JP Nagar, Bengaluru
                         </div>
                         <div class="project-specs">
                             <div class="spec-item">
@@ -945,18 +953,18 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 2 - MG Towers -->
                 <div class="project-card" data-category="residential completed">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MG Towers - Exterior">
+                                <img src="images/build - 6.jpg" alt="MG Towers - Exterior">
                             </div>
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MG Towers - Lobby">
+                                <img src="Images 1/m1.jpg" alt="MG Towers - Lobby">
                             </div>
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MG Towers - View">
+                                <img src="Images 1/m2.jpg" alt="MG Towers - View">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -990,15 +998,12 @@
                     </div>
                 </div>
 
-               <!-- Project 3 -->
+                <!-- Project 3 - Anjanapura -->
                 <div class="project-card" data-category="residential ongoing">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Anjanapura - Exterior">
-                            </div>
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Anjanapura - Interior">
+                                <img src="Images 1/anjanapura.jpg" alt="Anjanapura - Exterior">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -1007,13 +1012,12 @@
                         </div>
                         <div class="gallery-dots">
                             <button class="gallery-dot active"></button>
-                            <button class="gallery-dot"></button>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Anjanapura</h3>
                         <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i>Anjanapura 6th block Lal Bahadur Shastri nagar Bengaluru 560108
+                            <i class="fas fa-map-marker-alt"></i> Anjanapura 6th block, Bengaluru
                         </div>
                         <div class="project-specs">
                             <div class="spec-item">
@@ -1031,15 +1035,21 @@
                     </div>
                 </div>
 
-                <!-- Project 4 -->
+                <!-- Project 4 - Kengeri -->
                 <div class="project-card" data-category="residential upcoming">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kengeri - Site">
+                                <img src="Images 1/kengeri.jpg" alt="Kengeri - Site">
                             </div>
                             <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kengeri - Plan">
+                                <img src="Images 1/a1.JPG" alt="Kengeri - Interior">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="kengeri/k4.jpg" alt="Kengeri - Bathroom">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="kengeri/k5.jpg" alt="Kengeri - Bathroom">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -1048,6 +1058,8 @@
                         </div>
                         <div class="gallery-dots">
                             <button class="gallery-dot active"></button>
+                            <button class="gallery-dot"></button>
+                            <button class="gallery-dot"></button>
                             <button class="gallery-dot"></button>
                         </div>
                     </div>
@@ -1071,99 +1083,16 @@
                         <a href="#" class="project-link">View Details</a>
                     </div>
                 </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card" data-category="commercial completed">
-                    <div class="image-gallery">
-                        <div class="gallery-slides">
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Commercial Complex">
-                            </div>
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Commercial Complex Interior">
-                            </div>
-                        </div>
-                        <div class="gallery-nav">
-                            <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="gallery-dots">
-                            <button class="gallery-dot active"></button>
-                            <button class="gallery-dot"></button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>MG Commercial Hub</h3>
-                        <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i> Whitefield, Bengaluru
-                        </div>
-                        <div class="project-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-building"></i> 5 Floors
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i> 25000 sq.ft
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-calendar-alt"></i> 2023
-                            </div>
-                        </div>
-                        <span class="project-status status-completed">Completed</span>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card" data-category="residential ongoing">
-                    <div class="image-gallery">
-                        <div class="gallery-slides">
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Villa">
-                            </div>
-                            <div class="gallery-slide">
-                                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Villa Interior">
-                            </div>
-                        </div>
-                        <div class="gallery-nav">
-                            <button class="gallery-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="gallery-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                        </div>
-                        <div class="gallery-dots">
-                            <button class="gallery-dot active"></button>
-                            <button class="gallery-dot"></button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>MG Luxury Villas</h3>
-                        <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i> Sarjapur Road, Bengaluru
-                        </div>
-                        <div class="project-specs">
-                            <div class="spec-item">
-                                <i class="fas fa-home"></i> 4BHK
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i> 3200 sq.ft
-                            </div>
-                            <div class="spec-item">
-                                <i class="fas fa-calendar-alt"></i> 2025
-                            </div>
-                        </div>
-                        <span class="project-status status-ongoing">Ongoing</span>
-                        <a href="#" class="project-link">View Details</a>
-                    </div>
-                </div>
             </div>
             
             <div class="load-more">
                 <button class="load-btn">Load More Projects</button>
             </div>
-        </div> <!-- Close container -->
-    </section> <!-- Close projects-grid section -->
+        </div>
+    </section>
 
-
-     <!-- Footer Styles -->
-     <footer>
+    <!-- Footer Section -->
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -1189,13 +1118,13 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> No. 96/127, 1st floor, 7th Main Road,
-                        4th Block Jayanagar, Bangalore 560011</p>
+                        4th Block Jayanagar, Bangalore - 560011</p>
                     <p><i class="fas fa-phone"></i> +91 9880166879 </p>
                     <p><i class="fas fa-envelope"></i> mgbuildcon2025@gmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed <i class="" style="color: #ff6b00;"></i> by Jeevan K S</p>
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed by Jeevan K S</p>
             </div>
         </div>
     </footer>
