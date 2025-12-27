@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Construction Services | MG Buildcon Pvt Ltd</title>
-     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T5B2C3K4');</script>
-<!-- End Google Tag Manager -->
+    <title>Construction Services | Residential & Commercial Building | MG Buildcon Pvt Ltd</title>
+    <meta name="description" content="MG Buildcon offers premium construction services in Bangalore - residential, commercial, and industrial construction with transparent pricing and quality craftsmanship.">
+    <meta name="keywords" content="construction services bangalore, residential construction, commercial building, construction company bangalore, building contractors">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T5B2C3K4');</script>
+    <!-- End Google Tag Manager -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -227,7 +230,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 3.5rem;
             margin-bottom: 20px;
             line-height: 1.2;
-            text-transform: uppercase;
             font-weight: 800;
         }
         
@@ -242,28 +244,121 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             line-height: 1.6;
         }
         
-        /* Packages Section */
-        .packages-section {
+        /* Services Overview Section */
+        .services-overview {
             padding: 80px 0;
-            background-color: #f5f7fa;
+            background-color: #fff;
         }
-
+        
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-
+        
         .section-title h2 {
             font-size: 2.5rem;
             color: #0056b3;
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
         }
-
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #ff6b00;
+        }
+        
         .section-title p {
             font-size: 1.1rem;
             color: #666;
             max-width: 700px;
             margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #0056b3;
+            margin-right: 10px;
+        }
+        
+        /* Packages Section */
+        .packages-section {
+            padding: 80px 0;
+            background-color: #f5f7fa;
         }
 
         .city-packages {
@@ -436,63 +531,134 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 1rem;
         }
         
-         /* Reset and Base Styles */
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Internal Navigation Links */
+        .internal-nav {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 80px;
+            z-index: 999;
         }
         
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            overflow-x: hidden;
+        .internal-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        .internal-nav a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .internal-nav a:hover {
+            background-color: #f0f7ff;
+            color: #0056b3;
+        }
+        
+        .internal-nav a.active-internal {
+            background-color: #0056b3;
+            color: white;
+        }
+        
+        /* Turnkey Projects Section */
+        .turnkey-projects {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            background: #f0f7ff;
+        }
+        
+        .step-icon {
+            font-size: 3rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #ff6b00;
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn-primary {
+            background-color: #ff6b00;
+            color: white;
+        }
+        
+        .cta-btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .cta-btn-secondary:hover {
+            background-color: white;
+            color: #0056b3;
         }
         
         /* Calculator Section */
         .calculator-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: #0056b3;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #ff6b00;
-        }
-        
-        .section-title p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto;
         }
         
         .calculator-container {
@@ -601,32 +767,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-weight: 600;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #ff6b00;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-            width: 100%;
-            font-size: 1.1rem;
-        }
-        
-        .btn:hover {
-            background-color: #e05d00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
-        }
-        
-        .btn i {
-            margin-left: 8px;
-        }
-        
         /* Animation */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -637,41 +777,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             animation: fadeIn 0.6s ease-out forwards;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .calculator-section {
-                padding: 60px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .calculator-form,
-            .calculator-result {
-                min-width: 100%;
-            }
-            
-            .result-value {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .calculator-form,
-            .calculator-result {
-                padding: 20px;
-            }
-            
-            .form-control {
-                padding: 10px 12px;
-            }
-        }
-
         /* Footer Styles */
         footer {
             background-color: #222;
@@ -848,6 +953,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .city-title h3 {
                 font-size: 1.5rem;
             }
+            
+            .internal-nav ul {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -869,9 +980,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 padding: 15px;
             }
             
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .calculator-section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .calculator-form,
+            .calculator-result {
+                min-width: 100%;
+            }
+            
+            .result-value {
+                font-size: 2rem;
             }
         }
         
@@ -906,14 +1038,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .logo h1 {
                 font-size: 1.3rem;
             }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .calculator-form,
+            .calculator-result {
+                padding: 20px;
+            }
+            
+            .form-control {
+                padding: 10px 12px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5B2C3K4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5B2C3K4"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     
     <!-- Header Section -->
     <header>
@@ -927,7 +1077,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="index.html" class="">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
                         <a href="project.html">Projects <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -937,17 +1087,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="construction.html">Services <i class="fas fa-chevron-down"></i></a>
+                        <a href="construction.html" class="active">Services <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="construction.html">Construction Services</a></li>
-                            <li><a href="construction.html">Architectural Design</a></li>
+                            <li><a href="construction.html#residential" class="active-internal">Construction Services</a></li>
+                            <li><a href="construction.html#commercial">Commercial Construction</a></li>
+                            <li><a href="construction.html#turnkey">Turnkey Projects</a></li>
+                            <li><a href="construction.html#calculator">Cost Calculator</a></li>
                             <li><a href="interior.html">Interior Design</a></li>
                         </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="careers.html">Careers</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="calculator.html" class="btn calculator-btn">Cost Calculator</a></li>
+                    <li><a href="#calculator" class="btn calculator-btn">Cost Calculator</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -961,25 +1113,127 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <div class="hero-content">
                 <h1>Constructing Foundations, <span>Shaping Futures!</span></h1>
-                <p>Our construction service goes beyond building houses; it's about creating personalized sanctuaries, reflect your lifestyle, taste, and dreams. Every corner narrates a unique story, yours.</p>
-                <a href="#" class="btn">Make it Reality</a>
+                <p>MG Buildcon offers comprehensive construction services in Bangalore - from residential homes to commercial complexes. Quality craftsmanship, transparent pricing, and timely delivery guaranteed.</p>
+                <a href="#residential" class="btn">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Navigation -->
+    <div class="internal-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#residential" class="active-internal">Residential Construction</a></li>
+                <li><a href="#commercial">Commercial Construction</a></li>
+                <li><a href="#turnkey">Turnkey Projects</a></li>
+                <li><a href="#packages">Construction Packages</a></li>
+                <li><a href="#calculator">Cost Calculator</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview" id="residential">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Construction Services in Bangalore</h2>
+                <p>As a leading construction company in Bangalore, we provide end-to-end construction solutions for residential, commercial, and industrial projects.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Residential Construction -->
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1567496898669-ee935f003f30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Residential Construction in Bangalore - Custom Home Building">
+                    </div>
+                    <div class="service-content">
+                        <h3>Residential Construction</h3>
+                        <p>Building dream homes in Bangalore with attention to detail, quality materials, and personalized designs that reflect your lifestyle and preferences.</p>
+                        <ul class="service-features">
+                            <li>Custom home design and construction</li>
+                            <li>Villa and apartment construction</li>
+                            <li>Home extension and renovation</li>
+                            <li>Green building and sustainable design</li>
+                            <li>Quality assurance and project management</li>
+                            <li>Timely completion guarantee</li>
+                        </ul>
+                        <a href="#packages" class="enquire-btn">View Residential Packages</a>
+                    </div>
+                </div>
+                
+                <!-- Commercial Construction -->
+                <div class="service-card" id="commercial">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Commercial Construction Bangalore - Office and Retail Spaces">
+                    </div>
+                    <div class="service-content">
+                        <h3>Commercial Construction</h3>
+                        <p>Specializing in commercial buildings, office spaces, retail outlets, and hospitality projects in Bangalore with functional design and modern amenities.</p>
+                        <ul class="service-features">
+                            <li>Office buildings and corporate campuses</li>
+                            <li>Retail spaces and shopping complexes</li>
+                            <li>Hospitality and restaurant construction</li>
+                            <li>Educational institutions and healthcare</li>
+                            <li>Commercial interior fit-outs</li>
+                            <li>Compliance with commercial building codes</li>
+                        </ul>
+                        <a href="contact.html" class="enquire-btn">Get Commercial Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turnkey Projects Section -->
+    <section class="turnkey-projects" id="turnkey">
+        <div class="container">
+            <div class="section-title">
+                <h2>Turnkey Construction Projects</h2>
+                <p>From concept to completion, we handle every aspect of your construction project in Bangalore, ensuring seamless execution and quality delivery.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>Design & Planning</h3>
+                    <p>Architectural design, structural planning, and permit acquisition for your Bangalore construction project.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Construction</h3>
+                    <p>Quality construction with premium materials, skilled labor, and strict quality control measures.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-paint-roller"></i></div>
+                    <h3>Finishing & Interior</h3>
+                    <p>Premium finishing, electrical, plumbing, painting, and interior work to complete your project.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <h3>Quality Check & Handover</h3>
+                    <p>Final inspection, quality assurance, and timely handover with all necessary documentation.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Packages Section -->
-    <section class="packages-section">
+    <section class="packages-section" id="packages">
         <div class="container">
             <div class="section-title">
-                <h2>Our Construction Packages</h2>
+                <h2>Our Construction Packages in Bangalore</h2>
                 <p>Tailored solutions for every budget and requirement, delivering quality construction with transparent pricing</p>
             </div>
 
             <!-- Bangalore Packages -->
             <div class="city-packages">
                 <div class="city-title">
-                    <h3>Our Bangalore Package</h3>
-                    <p>Coze up, Your Way: Explore Our Signature Packages.</p>
+                    <h3>Bangalore Construction Packages</h3>
+                    <p>Premium construction services at competitive rates per square foot in Bangalore.</p>
                 </div>
 
                 <div class="packages-container">
@@ -994,27 +1248,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="package-features">
                             <ul>
-                                <li>Design & Drawings​</li>
-                                <li>Core Construction Materials used</li>
-                                <li>Elevation</li>
-                                <li>Sump, Parapet wall & other Items</li>
-                                <li>Flooring Works</li>
-                                <li>Walltiling works</li>
-                                <li>Doors</li>
-                                <li>Windows</li>
-                                <li>Kitchen</li>
-                                <li>Bathroom</li>
-                                <li>Electrical Works</li>
-                                <li>Plumbing Works</li>
-                                <li>Painting Works</li>
-                                <li>Fabrication works</li>
-                                <li>Exclusions</li>
-                                <li>Payment structure</li>
-                                <li>Construction Guarantee and warranty</li>
+                                <li>Basic design & drawings​</li>
+                                <li>Standard construction materials</li>
+                                <li>Basic elevation design</li>
+                                <li>Standard flooring works</li>
+                                <li>Basic wall tiling</li>
+                                <li>Standard doors and windows</li>
+                                <li>Functional kitchen setup</li>
+                                <li>Basic bathroom fittings</li>
+                                <li>Standard electrical works</li>
+                                <li>Basic plumbing works</li>
+                                <li>Interior and exterior painting</li>
+                                <li>1-year construction warranty</li>
                             </ul>
                         </div>
                         <div class="package-cta">
-                            <a href="#" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
+                            <a href="contact.html" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -1029,62 +1278,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="package-features">
                             <ul>
-                                <li>Design & Drawings​</li>
-                                <li>Core Construction Materials used</li>
-                                <li>Elevation</li>
-                                <li>Sump, Parapet wall & other Items</li>
-                                <li>Flooring Works</li>
-                                <li>Walltiling works</li>
-                                <li>Doors</li>
-                                <li>Windows</li>
-                                <li>Kitchen</li>
-                                <li>Bathroom</li>
-                                <li>Electrical Works</li>
-                                <li>Plumbing Works</li>
-                                <li>Painting Works</li>
-                                <li>Fabrication works</li>
-                                <li>Exclusions</li>
-                                <li>Payment structure</li>
-                                <li>Construction Guarantee and warranty</li>
+                                <li>Custom design & drawings​</li>
+                                <li>Premium construction materials</li>
+                                <li>Enhanced elevation design</li>
+                                <li>Premium flooring (Vitrified tiles)</li>
+                                <li>Premium wall tiling</li>
+                                <li>Branded doors and windows</li>
+                                <li>Semi-modular kitchen</li>
+                                <li>Premium bathroom fittings</li>
+                                <li>Concealed electrical works</li>
+                                <li>Advanced plumbing system</li>
+                                <li>Premium paint brands</li>
+                                <li>2-year construction warranty</li>
                             </ul>
                         </div>
                         <div class="package-cta">
-                            <a href="#" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Premium Pro Package -->
-                    <div class="package-card">
-                        <div class="package-header">
-                            <h4>Premium Pro Package</h4>
-                            <div class="package-price">
-                                <span class="original-price">Rs.2299/sft</span>
-                                <span class="discounted-price">Rs.1999/sft</span>
-                            </div>
-                        </div>
-                        <div class="package-features">
-                            <ul>
-                                <li>Design & Drawings​</li>
-                                <li>Core Construction Materials used</li>
-                                <li>Elevation</li>
-                                <li>Sump, Parapet wall & other Items</li>
-                                <li>Flooring Works</li>
-                                <li>Walltiling works</li>
-                                <li>Doors</li>
-                                <li>Windows</li>
-                                <li>Kitchen</li>
-                                <li>Bathroom</li>
-                                <li>Electrical Works</li>
-                                <li>Plumbing Works</li>
-                                <li>Painting Works</li>
-                                <li>Fabrication works</li>
-                                <li>Exclusions</li>
-                                <li>Payment structure</li>
-                                <li>Construction Guarantee and warranty</li>
-                            </ul>
-                        </div>
-                        <div class="package-cta">
-                            <a href="#" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
+                            <a href="contact.html" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
@@ -1099,73 +1308,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                         <div class="package-features">
                             <ul>
-                                <li>Design & Drawings​</li>
-                                <li>Core Construction Materials used</li>
-                                <li>Elevation</li>
-                                <li>Sump, Parapet wall & other Items</li>
-                                <li>Flooring Works</li>
-                                <li>Walltiling works</li>
-                                <li>Doors</li>
-                                <li>Windows</li>
-                                <li>Kitchen</li>
-                                <li>Bathroom</li>
-                                <li>Electrical Works</li>
-                                <li>Plumbing Works</li>
-                                <li>Painting Works</li>
-                                <li>Fabrication works</li>
-                                <li>Exclusions</li>
-                                <li>Payment structure</li>
-                                <li>Construction Guarantee and warranty</li>
+                                <li>Architectural design & 3D visualization​</li>
+                                <li>Luxury construction materials</li>
+                                <li>Custom elevation with cladding</li>
+                                <li>Luxury flooring (Marble/Granite)</li>
+                                <li>Full height wall tiling</li>
+                                <li>Designer doors and windows</li>
+                                <li>Modular kitchen with appliances</li>
+                                <li>Luxury bathroom with fittings</li>
+                                <li>Smart home electrical system</li>
+                                <li>CPVC plumbing with fixtures</li>
+                                <li>Premium emulsion painting</li>
+                                <li>5-year construction warranty</li>
                             </ul>
                         </div>
                         <div class="package-cta">
-                            <a href="#" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Ultra Luxury Package -->
-                    <div class="package-card">
-                        <div class="package-header">
-                            <h4>Ultra Luxury Package</h4>
-                            <div class="package-price">
-                                <span class="original-price">Rs.2999/sft</span>
-                                <span class="discounted-price">Rs.2499/sft</span>
-                            </div>
-                        </div>
-                        <div class="package-features">
-                            <ul>
-                                <li>Design & Drawings​</li>
-                                <li>Core Construction Materials used</li>
-                                <li>Elevation</li>
-                                <li>Sump, Parapet wall & other Items</li>
-                                <li>Flooring Works</li>
-                                <li>Walltiling works</li>
-                                <li>Doors</li>
-                                <li>Windows</li>
-                                <li>Kitchen</li>
-                                <li>Bathroom</li>
-                                <li>Electrical Works</li>
-                                <li>Plumbing Works</li>
-                                <li>Painting Works</li>
-                                <li>Fabrication works</li>
-                                <li>Exclusions</li>
-                                <li>Payment structure</li>
-                                <li>Construction Guarantee and warranty</li>
-                            </ul>
-                        </div>
-                        <div class="package-cta">
-                            <a href="#" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
+                            <a href="contact.html" class="enquire-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-     <!-- Calculator Section -->
-     <section class="calculator-section">
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Construction Project in Bangalore?</h2>
+            <p>Get a free consultation with our construction experts and receive a detailed project estimate tailored to your requirements.</p>
+            <div class="cta-buttons">
+                <a href="#calculator" class="btn cta-btn-primary">Calculate Your Cost</a>
+                <a href="contact.html" class="btn cta-btn-secondary">Contact Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section" id="calculator">
         <div class="container">
             <div class="section-title">
-                <h2>Construction Cost Calculator</h2>
-                <p>Estimate the cost of your dream project with our easy-to-use calculator. Get an instant quote based on your requirements.</p>
+                <h2>Construction Cost Calculator for Bangalore</h2>
+                <p>Estimate the cost of your dream construction project in Bangalore with our easy-to-use calculator. Get an instant quote based on your requirements.</p>
             </div>
             
             <div class="calculator-container">
@@ -1187,6 +1370,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <select class="form-control" id="location" required>
                             <option value="">Select the location</option>
                             <option value="bangalore">Bangalore</option>
+                            <option value="bangalore_north">Bangalore North</option>
+                            <option value="bangalore_south">Bangalore South</option>
+                            <option value="bangalore_east">Bangalore East</option>
+                            <option value="bangalore_west">Bangalore West</option>
                         </select>
                     </div>
                     
@@ -1253,7 +1440,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
                     </div>
                     
-                    <p style="text-align: center; margin-top: auto;">Want a detailed estimate? Our expert will contact you shortly.</p>
+                    <p style="text-align: center; margin-top: auto;">Want a detailed estimate? Our construction expert will contact you shortly.</p>
                 </div>
             </div>
         </div>
@@ -1267,11 +1454,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="logo">
                         <i class="fas fa-building logo-icon"></i>
                         <div class="logo-text">
-                            <h1 style="color: white;"><span style="color: #ff6b00;"></span>Jeevan K S</h1>
+                            <h1 style="color: white;"><span style="color: #ff6b00;">MG</span> Buildcon Pvt Ltd</h1>
                             <p style="color: #bbb;">Building Dreams Since 2025</p>
                         </div>
                     </div>
-                    <p>We are committed to delivering exceptional construction services with quality craftsmanship and innovative designs that stand the test of time.</p>
+                    <p>Leading construction company in Bangalore offering residential, commercial, and industrial construction services with quality craftsmanship and innovative designs.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1283,31 +1470,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="construction.html">Construction Services</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="#calculator">Cost Calculator</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Services</h3>
+                    <h3>Our Services in Bangalore</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Residential Construction</a></li>
-                        <li><a href="#">Commercial Construction</a></li>
-                        <li><a href="#">Interior Design</a></li>
-                        <li><a href="#">Architectural Services</a></li>
-                        <li><a href="#">Renovation</a></li>
+                        <li><a href="construction.html#residential">Residential Construction</a></li>
+                        <li><a href="construction.html#commercial">Commercial Construction</a></li>
+                        <li><a href="construction.html#turnkey">Turnkey Projects</a></li>
+                        <li><a href="interior.html">Interior Design</a></li>
+                        <li><a href="#">Renovation Services</a></li>
                         <li><a href="#">Project Management</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i>No. 96/127, 1st floor, 7th Main Road,
-                        4th Block Jayanagar, Bangalore - 560011</p>
-                    <p><i class="fas fa-phone"></i> +91 9880166879 </p>
-                    <p><i class="fas fa-envelope"></i> mgbuildcon2025@gmail.com </p>
+                    <p><i class="fas fa-map-marker-alt"></i> No. 96/127, 1st floor, 7th Main Road,
+                        4th Block Jayanagar, Bangalore - 560011</p>
+                    <p><i class="fas fa-phone"></i> +91 9880166879</p>
+                    <p><i class="fas fa-envelope"></i> mgbuildcon2025@gmail.com</p>
                     <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
                 </div>
             </div>
@@ -1322,6 +1509,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
+            
+            // Update internal navigation active state
+            updateInternalNavActiveState();
         });
         
         // Mobile menu toggle
@@ -1355,7 +1545,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             }
         });
-
+        
+        // Internal navigation smooth scrolling
+        document.querySelectorAll('.internal-nav a, .dropdown-menu a[href*="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active state in internal navigation
+                        document.querySelectorAll('.internal-nav a').forEach(link => {
+                            link.classList.remove('active-internal');
+                        });
+                        this.classList.add('active-internal');
+                    }
+                }
+            });
+        });
+        
+        // Update internal navigation active state on scroll
+        function updateInternalNavActiveState() {
+            const sections = document.querySelectorAll('section[id], div[id]');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.internal-nav a').forEach(link => {
+                        link.classList.remove('active-internal');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active-internal');
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Cost Calculator
         document.getElementById('costCalculator').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1405,18 +1644,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     locationFactor = 0.1; // 10% higher in Bangalore
                     locationText = '+10% (Bangalore)';
                     break;
-                case 'mysuru':
-                    locationFactor = 0; // Standard in Mysuru
-                    locationText = 'Standard (Mysuru)';
+                case 'bangalore_north':
+                    locationFactor = 0.12; // 12% higher
+                    locationText = '+12% (Bangalore North)';
                     break;
-                case 'hubli':
-                    locationFactor = -0.05; // 5% lower in Hubli
-                    locationText = '-5% (Hubli)';
+                case 'bangalore_south':
+                    locationFactor = 0.15; // 15% higher
+                    locationText = '+15% (Bangalore South)';
                     break;
-                case 'mangalore':
-                    locationFactor = 0.05; // 5% higher in Mangalore
-                    locationText = '+5% (Mangalore)';
+                case 'bangalore_east':
+                    locationFactor = 0.08; // 8% higher
+                    locationText = '+8% (Bangalore East)';
                     break;
+                case 'bangalore_west':
+                    locationFactor = 0.1; // 10% higher
+                    locationText = '+10% (Bangalore West)';
+                    break;
+                default:
+                    locationFactor = 0.1;
+                    locationText = '+10% (Bangalore)';
             }
             
             // Construction type factor
@@ -1464,8 +1710,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             // Scroll to result
             document.getElementById('calculatorResult').scrollIntoView({ behavior: 'smooth' });
             
-            // Here you would typically send the form data to your server
-            // For this example, we'll just log it
+            // Send form data to server (simulated)
             const formData = {
                 name: document.getElementById('name').value,
                 phone: document.getElementById('phone').value,
@@ -1478,8 +1723,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             };
             
             console.log('Form submitted:', formData);
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you! Our construction expert will contact you within 24 hours with a detailed estimate.');
+            }, 1000);
         });
     </script>
 </body>
 </html>
-
