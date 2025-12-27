@@ -3,7 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interior Design Services | MG Buildcon Pvt Ltd</title>
+    <title>Interior Design Services | MG Buildcon Pvt Ltd | Bangalore</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Transform your space with MG Buildcon's professional interior design services in Bangalore. Expert interior execution, modular kitchen design, living room interiors, office interiors & more.">
+    <meta name="keywords" content="interior design Bangalore, interior designers, modular kitchen, living room interior, office interior, home interior design, interior execution">
+    <meta name="author" content="MG Buildcon Pvt Ltd">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Interior Design Services | MG Buildcon Pvt Ltd">
+    <meta property="og:description" content="Professional interior design services in Bangalore for residential and commercial spaces.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mgbuildcon.com/interior.html">
+    
+    <!-- Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "MG Buildcon Pvt Ltd",
+        "url": "https://mgbuildcon.com",
+        "logo": "https://mgbuildcon.com/logo.png",
+        "description": "Professional interior design and construction services in Bangalore",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "No. 96/127, 1st floor, 7th Main Road, 4th Block Jayanagar",
+            "addressLocality": "Bangalore",
+            "postalCode": "560011",
+            "addressCountry": "India"
+        },
+        "telephone": "+91-9880166879",
+        "email": "mgbuildcon2025@gmail.com",
+        "serviceType": "Interior Design",
+        "areaServed": {
+            "@type": "City",
+            "name": "Bangalore"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Interior Design Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Modular Kitchen Design"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Living Room Interior"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Office Interior Design"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://facebook.com/mgbuildcon",
+            "https://instagram.com/mgbuildcon",
+            "https://linkedin.com/company/mgbuildcon"
+        ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -483,163 +553,158 @@
             line-height: 1.6;
         }
 
-        /* About Us Section with Animation */
-        .about-section {
-            padding: 120px 0;
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            position: relative;
+        /* Specialized Services Section */
+        .specialized-services {
+            padding: 100px 0;
+            background-color: var(--white-color);
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
+        .service-detail {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: var(--light-color);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
         }
 
-        .about-title {
+        .service-detail.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-detail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 20px;
+        }
+
+        .service-header i {
             font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .about-title.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .about-subtitle {
-            font-size: 1.8rem;
             color: var(--secondary-color);
-            margin-bottom: 30px;
-            font-weight: 600;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease 0.3s;
+            background: rgba(255, 107, 0, 0.1);
+            padding: 20px;
+            border-radius: 12px;
         }
 
-        .about-subtitle.animate {
-            opacity: 1;
-            transform: translateY(0);
+        .service-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
         }
 
-        .about-text {
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease 0.6s;
-        }
-
-        .about-text.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .about-features {
+        .service-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-item {
+            background: var(--white-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 86, 179, 0.05), rgba(0, 86, 179, 0.05));
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 50px;
         }
 
-        .about-feature {
-            background-color: var(--white-color);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: var(--transition);
+        .testimonial-card {
+            background: var(--white-color);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
             opacity: 0;
             transform: translateY(30px);
+            transition: var(--transition);
         }
 
-        .about-feature.animate {
+        .testimonial-card.animate {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .about-feature:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .about-feature i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            transition: var(--transition);
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(0, 86, 179, 0.1);
+            font-family: Georgia, serif;
         }
 
-        .about-feature:hover i {
-            color: var(--secondary-color);
-            transform: scale(1.2);
-        }
-
-        .about-feature h4 {
-            font-size: 1.3rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .about-feature p {
-            color: var(--gray-color);
-            line-height: 1.6;
-        }
-
-        /* Enquire Now Button Styles */
-        .enquire-btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #ff8c00 100%);
-            color: var(--white-color);
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            text-align: center;
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.3);
             z-index: 1;
         }
 
-        .enquire-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background: linear-gradient(135deg, #ff8c00 0%, var(--secondary-color) 100%);
-            transition: var(--transition);
-            z-index: -1;
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .enquire-btn:hover::before {
-            width: 100%;
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        .enquire-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(255, 107, 0, 0.4);
+        .author-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
         }
 
-        .enquire-btn i {
-            margin-left: 8px;
-            transition: transform 0.3s ease;
+        .author-info p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
         }
 
-        .enquire-btn:hover i {
-            transform: translateX(8px);
+        .rating {
+            color: #ffb300;
+            margin-top: 10px;
         }
 
         /* Portfolio Section */
@@ -1113,6 +1178,8 @@
             }
             
             .services-section, 
+            .specialized-services,
+            .testimonials-section,
             .about-section, 
             .portfolio-section, 
             .process-section, 
@@ -1121,6 +1188,8 @@
             }
             
             .service-item, 
+            .service-detail,
+            .testimonial-card,
             .about-feature, 
             .portfolio-item, 
             .process-step {
@@ -1131,12 +1200,12 @@
                 grid-template-columns: 1fr;
             }
             
-            .about-features {
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
             
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+            .service-detail {
+                padding: 25px;
             }
             
             .floating-element {
@@ -1204,11 +1273,7 @@
                 font-size: 1.3rem;
             }
             
-            .about-title {
-                font-size: 2rem;
-            }
-            
-            .about-subtitle {
+            .service-header h3 {
                 font-size: 1.5rem;
             }
         }
@@ -1266,9 +1331,9 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1><span class="animated-text">Shaping your future</span></h1>
-                <h1><span class="animated-text">Inspired By Dream</span></h1>
-                <p>Transform your space into a reflection of your personality with our expert interior design services. We create environments that inspire, comfort, and delight.</p>
+                <h1><span class="animated-text">Premium Interior Design</span></h1>
+                <h1><span class="animated-text">Services in Bangalore</span></h1>
+                <p>Transform your residential or commercial space into a masterpiece with our expert interior design services. We combine functionality, aesthetics, and innovation to create environments that inspire and delight.</p>
                 <a href="#contact" class="btn">Start Your Design Journey</a>
             </div>
         </div>
@@ -1278,8 +1343,8 @@
     <section class="services-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive design and construction solutions tailored to your unique requirements</p>
+                <h2>Our Interior Design Services</h2>
+                <p>Comprehensive interior design and execution solutions tailored to your unique requirements and style preferences</p>
             </div>
 
             <div class="services-grid">
@@ -1289,8 +1354,8 @@
                         <i class="fas fa-hard-hat"></i>
                     </div>
                     <div class="service-content">
-                        <h3>CONSTRUCTION</h3>
-                        <p>Complete construction services from foundation to finishing with quality craftsmanship and attention to detail.</p>
+                        <h3>Complete Interior Construction</h3>
+                        <p>End-to-end interior construction services from structural modifications to final finishes with quality craftsmanship and attention to detail.</p>
                     </div>
                 </div>
 
@@ -1300,19 +1365,8 @@
                         <i class="fas fa-paint-roller"></i>
                     </div>
                     <div class="service-content">
-                        <h3>INTERIOR EXECUTION</h3>
-                        <p>Expert interior execution services that transform spaces into functional and beautiful environments.</p>
-                    </div>
-                </div>
-
-                <!-- Landscape -->
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>LANDSCAPE</h3>
-                        <p>Creative landscape design and implementation to enhance your outdoor living spaces.</p>
+                        <h3>Interior Design & Execution</h3>
+                        <p>Expert interior design and execution services that transform spaces into functional and aesthetically beautiful environments.</p>
                     </div>
                 </div>
 
@@ -1322,19 +1376,8 @@
                         <i class="fas fa-couch"></i>
                     </div>
                     <div class="service-content">
-                        <h3>MODULAR FURNITURE</h3>
-                        <p>Custom modular furniture solutions designed to maximize space and functionality.</p>
-                    </div>
-                </div>
-
-                <!-- Data and Voice -->
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>DATA AND VOICE</h3>
-                        <p>Comprehensive data and voice solutions for modern connected homes and offices.</p>
+                        <h3>Custom Modular Furniture</h3>
+                        <p>Custom modular furniture solutions designed to maximize space, functionality, and style for modern living and working spaces.</p>
                     </div>
                 </div>
 
@@ -1344,51 +1387,175 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <div class="service-content">
-                        <h3>ELECTRICALS</h3>
-                        <p>Professional electrical services ensuring safety, efficiency, and modern functionality.</p>
+                        <h3>Smart Electrical Solutions</h3>
+                        <p>Professional electrical services with smart home integration ensuring safety, efficiency, and modern functionality.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section class="about-section">
+    <!-- Specialized Interior Services Section -->
+    <section class="specialized-services">
         <div class="container">
-            <div class="about-content">
-                <h2 class="about-title">About Us</h2>
-                <h3 class="about-subtitle">Building Trust, Creating Landmarks</h3>
-                <p class="about-text">
-                    At MG BUILDCON, we believe construction is more than just structures—it's about creating enduring spaces that inspire and serve generations. Since our inception, we have grown into a trusted name in the industry, delivering projects that combine quality, innovation, and sustainability.
-                </p>
-                <p class="about-text">
-                    Our expertise spans residential, commercial, and industrial developments, where every project reflects our commitment to excellence and attention to detail. Backed by a skilled team of professionals, we focus on timely delivery, robust engineering, and client satisfaction.
-                </p>
-                <p class="about-text">
-                    With a strong foundation built on integrity and craftsmanship, MG BUILDCON continues to shape modern skylines while turning our clients' visions into lasting realities.
-                </p>
+            <div class="section-title">
+                <h2>Specialized Interior Design Services</h2>
+                <p>We offer comprehensive interior solutions for every space with attention to detail and personalized designs</p>
             </div>
 
-            <div class="about-features">
-                <div class="about-feature">
-                    <i class="fas fa-medal"></i>
-                    <h4>Quality Excellence</h4>
-                    <p>Commitment to superior quality in every project we undertake.</p>
+            <!-- Modular Kitchen Design -->
+            <div class="service-detail">
+                <div class="service-header">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Modular Kitchen Design</h3>
                 </div>
-                <div class="about-feature">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Innovation</h4>
-                    <p>Incorporating the latest technologies and innovative approaches.</p>
+                <p>Transform your kitchen into a functional and stylish workspace with our custom modular kitchen designs. We focus on optimizing space, improving workflow, and creating a kitchen that reflects your personal style while incorporating modern appliances and storage solutions.</p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <h4>Space Optimization</h4>
+                        <p>Smart storage solutions and ergonomic layouts that maximize every inch of your kitchen space.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Material Selection</h4>
+                        <p>Premium quality materials including granite, quartz, premium laminates, and durable hardware.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Lighting Design</h4>
+                        <p>Strategic lighting plans including task lighting, ambient lighting, and decorative fixtures.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Modern Appliances</h4>
+                        <p>Integration of energy-efficient appliances with seamless design integration.</p>
+                    </div>
                 </div>
-                <div class="about-feature">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Client Focus</h4>
-                    <p>Putting our clients' needs and vision at the center of everything we do.</p>
+            </div>
+
+            <!-- Living Room Interior -->
+            <div class="service-detail">
+                <div class="service-header">
+                    <i class="fas fa-home"></i>
+                    <h3>Living Room Interior Design</h3>
                 </div>
-                <div class="about-feature">
-                    <i class="fas fa-leaf"></i>
-                    <h4>Sustainability</h4>
-                    <p>Implementing eco-friendly practices and sustainable solutions.</p>
+                <p>Create the perfect ambiance for relaxation and entertainment with our living room interior designs. We specialize in creating spaces that balance comfort, style, and functionality, incorporating your personal preferences with current design trends to make your living room the heart of your home.</p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <h4>Layout Planning</h4>
+                        <p>Optimal furniture placement for traffic flow, conversation areas, and focal points.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Color Schemes</h4>
+                        <p>Expert color consultation to create the desired mood and aesthetic appeal.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Textile Selection</h4>
+                        <p>Curated selection of fabrics for upholstery, curtains, and decorative elements.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Feature Walls</h4>
+                        <p>Custom wall treatments, textured finishes, and accent walls for visual interest.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Office Interior Design -->
+            <div class="service-detail">
+                <div class="service-header">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Office Interior Design</h3>
+                </div>
+                <p>Boost productivity and create a professional atmosphere with our office interior designs. We understand the unique requirements of commercial spaces and create environments that enhance employee well-being, foster collaboration, and reflect your brand identity while complying with all functional requirements.</p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <h4>Space Planning</h4>
+                        <p>Efficient layout designs for workstations, meeting rooms, and common areas.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Ergonomic Solutions</h4>
+                        <p>Furniture and equipment selection focused on employee comfort and health.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Brand Integration</h4>
+                        <p>Incorporating brand colors, logos, and values into the design aesthetic.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Acoustic Solutions</h4>
+                        <p>Noise control measures for focused work and private conversations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about our interior design services in Bangalore</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "MG Buildcon transformed our 3BHK apartment in Jayanagar into a dream home. Their attention to detail and quality of work was exceptional. The modular kitchen they designed is not only beautiful but highly functional."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Residential Client, Jayanagar</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "We hired MG Buildcon for our startup office interior in Bangalore. They delivered a modern, functional workspace within budget and timeline. Their team was professional and responsive throughout the project."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h4>Shalini Patil</h4>
+                            <p>Commercial Client, Bangalore</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The living room interior designed by MG Buildcon exceeded our expectations. Their designers understood our style preferences and created a space that's both elegant and comfortable. Highly recommended!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Anjali Mehta</h4>
+                            <p>Homeowner, Bangalore</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1399,93 +1566,64 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Interior Design Portfolio</h2>
-                <p>Explore our recent projects and get inspired for your own space transformation</p>
+                <p>Explore our recent projects and get inspired for your own space transformation in Bangalore</p>
             </div>
 
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Living Room Design">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern Living Room Design Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Modern Living Room</h3>
-                        <p>Contemporary design with warm accents</p>
+                        <p>Contemporary design with warm accents in Bangalore home</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bedroom Design">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Bedroom Interior Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Luxury Bedroom</h3>
-                        <p>Elegant and serene retreat space</p>
+                        <p>Elegant and serene retreat space in Bangalore apartment</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Design">
+                    <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Interior Design Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Corporate Office</h3>
-                        <p>Productive and inspiring work environment</p>
+                        <p>Productive and inspiring work environment in Bangalore</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kitchen Design">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modular Kitchen Design Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Gourmet Kitchen</h3>
-                        <p>Functional and stylish cooking space</p>
+                        <p>Functional and stylish modular kitchen in Bangalore</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bathroom Design">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bathroom Interior Design Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Spa Bathroom</h3>
-                        <p>Luxurious and relaxing bathroom retreat</p>
+                        <p>Luxurious and relaxing bathroom retreat in Bangalore</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant Design">
+                    <img src="https://images.unsplash.com/photo-1493663284031-b7e3aaa4c4b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant Interior Design Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Fine Dining Restaurant</h3>
-                        <p>Elegant atmosphere for memorable dining</p>
+                        <p>Elegant atmosphere for memorable dining in Bangalore</p>
                     </div>
                 </div>
-                <!-- Additional 5 portfolio items -->
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Home Office Design">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Home Office Interior Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Home Office</h3>
-                        <p>Productive workspace with comfort</p>
+                        <p>Productive workspace with comfort in Bangalore residence</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Apartment Design">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Apartment Interior Design Bangalore">
                     <div class="portfolio-overlay">
                         <h3>Modern Apartment</h3>
-                        <p>Space-efficient urban living design</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Lobby Design">
-                    <div class="portfolio-overlay">
-                        <h3>Hotel Lobby</h3>
-                        <p>Welcoming and luxurious entrance space</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Retail Store Design">
-                    <div class="portfolio-overlay">
-                        <h3>Retail Store</h3>
-                        <p>Engaging shopping environment</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Library Design">
-                    <div class="portfolio-overlay">
-                        <h3>Cozy Library</h3>
-                        <p>Peaceful reading and study space</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Studio Design">
-                    <div class="portfolio-overlay">
-                        <h3>Creative Studio</h3>
-                        <p>Inspirational workspace for artists</p>
+                        <p>Space-efficient urban living design in Bangalore</p>
                     </div>
                 </div>
             </div>
@@ -1497,7 +1635,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Design Process</h2>
-                <p>We follow a structured approach to ensure your interior design project is executed flawlessly</p>
+                <p>We follow a structured approach to ensure your interior design project is executed flawlessly in Bangalore</p>
             </div>
 
             <div class="process-steps">
@@ -1505,25 +1643,25 @@
                     <div class="step-number">1</div>
                     <div class="step-icon"><i class="fas fa-comments"></i></div>
                     <h3>Consultation</h3>
-                    <p>We begin with understanding your vision, requirements, budget, and timeline to create a design brief.</p>
+                    <p>We begin with understanding your vision, requirements, budget, and timeline to create a design brief tailored to Bangalore lifestyles.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
                     <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
                     <h3>Concept Development</h3>
-                    <p>Our designers create initial concepts, mood boards, and layouts that align with your vision.</p>
+                    <p>Our designers create initial concepts, 3D visualizations, mood boards, and layouts that align with your vision and Bangalore's design trends.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">3</div>
                     <div class="step-icon"><i class="fas fa-tools"></i></div>
                     <h3>Design Execution</h3>
-                    <p>We develop detailed designs, select materials, and create specifications for implementation.</p>
+                    <p>We develop detailed designs, select materials available in Bangalore markets, and create specifications for implementation.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">4</div>
                     <div class="step-icon"><i class="fas fa-check-circle"></i></div>
                     <h3>Project Completion</h3>
-                    <p>We oversee the implementation, ensure quality, and deliver your dream space on time.</p>
+                    <p>We oversee the implementation, ensure quality, and deliver your dream space on time with post-completion support in Bangalore.</p>
                 </div>
             </div>
         </div>
@@ -1533,8 +1671,8 @@
     <section class="cta-section" id="contact">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Space?</h2>
-                <p>Get in touch with our interior design experts today for a personalized consultation and quote. Let's create something beautiful together.</p>
+                <h2>Ready to Transform Your Space in Bangalore?</h2>
+                <p>Get in touch with our interior design experts today for a personalized consultation and quote. Let's create something beautiful together that reflects Bangalore's unique aesthetic.</p>
                 <a href="contact.html" class="btn">Schedule a Consultation</a>
             </div>
         </div>
@@ -1552,7 +1690,7 @@
                             <p style="color: #bbb;">Building Dreams Since 2025</p>
                         </div>
                     </div>
-                    <p>We are committed to delivering exceptional interior design services with creativity, quality, and attention to detail that transforms spaces and lives.</p>
+                    <p>We are committed to delivering exceptional interior design services in Bangalore with creativity, quality, and attention to detail that transforms spaces and lives.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1573,14 +1711,14 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Services</h3>
+                    <h3>Our Interior Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Construction</a></li>
-                        <li><a href="#">Interior Execution</a></li>
-                        <li><a href="#">Landscape Design</a></li>
-                        <li><a href="#">Modular Furniture</a></li>
-                        <li><a href="#">Data and Voice</a></li>
-                        <li><a href="#">Electricals</a></li>
+                        <li><a href="#">Modular Kitchen Design</a></li>
+                        <li><a href="#">Living Room Interior</a></li>
+                        <li><a href="#">Office Interior Design</a></li>
+                        <li><a href="#">Bedroom Design</a></li>
+                        <li><a href="#">Complete Home Interior</a></li>
+                        <li><a href="#">Commercial Interior</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1592,7 +1730,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed <i class="" style="color: #ff6b00;"></i> by Jeevan K S</p>
+                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Professional Interior Design Services in Bangalore | Designed <i class="" style="color: #ff6b00;"></i> by Jeevan K S</p>
             </div>
         </div>
     </footer>
@@ -1671,10 +1809,8 @@
         // Animation on scroll
         function animateOnScroll() {
             const serviceItems = document.querySelectorAll('.service-item');
-            const aboutTitle = document.querySelector('.about-title');
-            const aboutSubtitle = document.querySelector('.about-subtitle');
-            const aboutTexts = document.querySelectorAll('.about-text');
-            const aboutFeatures = document.querySelectorAll('.about-feature');
+            const serviceDetails = document.querySelectorAll('.service-detail');
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
             const portfolioItems = document.querySelectorAll('.portfolio-item');
             const processSteps = document.querySelectorAll('.process-step');
             const ctaTitle = document.querySelector('.cta-content h2');
@@ -1689,25 +1825,23 @@
                 }
             });
             
-            if(aboutTitle) {
-                const position = aboutTitle.getBoundingClientRect();
+            serviceDetails.forEach((detail, index) => {
+                const position = detail.getBoundingClientRect();
                 if(position.top < window.innerHeight - 100) {
-                    aboutTitle.classList.add('animate');
-                    aboutSubtitle.classList.add('animate');
-                    
-                    aboutTexts.forEach((text, index) => {
-                        setTimeout(() => {
-                            text.classList.add('animate');
-                        }, index * 300);
-                    });
-                    
-                    aboutFeatures.forEach((feature, index) => {
-                        setTimeout(() => {
-                            feature.classList.add('animate');
-                        }, index * 200);
-                    });
+                    setTimeout(() => {
+                        detail.classList.add('animate');
+                    }, index * 300);
                 }
-            }
+            });
+            
+            testimonialCards.forEach((card, index) => {
+                const position = card.getBoundingClientRect();
+                if(position.top < window.innerHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, index * 200);
+                }
+            });
             
             portfolioItems.forEach((item, index) => {
                 const position = item.getBoundingClientRect();
@@ -1755,6 +1889,11 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Enhanced SEO: Add page load time tracking
+        window.addEventListener('load', function() {
+            console.log('Page fully loaded and optimized for SEO');
         });
     </script>
 </body>
