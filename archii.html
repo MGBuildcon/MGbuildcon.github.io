@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - MG Buildcon Architects</title>
+    <!-- SEO-optimized title with keywords -->
+    <title>Architectural Design Services in Bangalore | MG Buildcon Architects</title>
+    <meta name="description" content="MG Buildcon Architects: Leading architectural design services in Bangalore. Specializing in residential, commercial, and industrial projects with sustainable design solutions.">
+    <meta name="keywords" content="architects in Bangalore, architectural design services, residential architects, commercial architects, building design, construction architects, MG Buildcon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -26,6 +29,13 @@
             color: var(--secondary);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* Ensure content is visible to crawlers despite animations */
+        .about-section, .services-grid, .strengths-container, .reasons-grid, .faq-container {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
         }
 
         /* Header Styles */
@@ -364,7 +374,7 @@
             transform: scale(1.05);
         }
 
-        /* Services Section */
+        /* Services Section - Enhanced with text blocks */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -418,6 +428,53 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--secondary);
+        }
+
+        /* Service Details Section - New */
+        .service-details {
+            padding: 5rem 10%;
+            background-color: #f9f9f9;
+        }
+
+        .service-category {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-category h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .service-category p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-features li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
         }
 
         /* Strengths Section */
@@ -589,6 +646,69 @@
         .reason:hover .reason-icon {
             color: white;
             transform: rotate(360deg);
+        }
+
+        /* FAQ Section - NEW */
+        .faq-section {
+            padding: 5rem 10%;
+            background-color: #f9f9f9;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f8f8;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            line-height: 1.7;
+        }
+
+        .faq-answer.active {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
 
         /* Projects Section */
@@ -844,7 +964,7 @@
                 font-size: 2.5rem;
             }
 
-            .about-section {
+            .about-section, .service-details, .faq-section {
                 padding: 3rem 5%;
             }
 
@@ -879,7 +999,7 @@
                 font-size: 1.8rem;
             }
 
-            .service-card, .strength-item, .reason {
+            .service-card, .strength-item, .reason, .service-category {
                 padding: 1.5rem;
             }
 
@@ -909,7 +1029,7 @@
     <section class="about-hero">
         <div class="about-hero-content">
             <h1>MG Buildcon Architects</h1>
-            <p>Creators of spaces that inspire, sustain, and stand the test of time</p>
+            <p>Leading architectural design services in Bangalore - Creating spaces that inspire, sustain, and stand the test of time</p>
             <div class="hero-cta">
                 <a href="#contact" class="cta-button">Get In Touch</a>
             </div>
@@ -977,6 +1097,7 @@
             </div>
             <div class="intro-text">
                 <p>At MG Buildcon Architects, we are more than just builders — we are creators of spaces that inspire, sustain, and stand the test of time. Established with a vision to redefine architectural excellence and modern living, MG Buildcon Architects has steadily grown into a trusted name in the field of architecture, construction, and real estate development.</p>
+                <p>As leading architects in Bangalore, we combine innovative design with practical functionality to deliver exceptional architectural solutions for residential, commercial, and industrial projects.</p>
             </div>
         </div>
     </section>
@@ -1010,14 +1131,14 @@
                     <div class="service-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3>Residential Projects</h3>
+                    <h3>Residential Architecture</h3>
                     <p>Creating homes that bring comfort, elegance, and practicality to everyday living.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3>Commercial Spaces</h3>
+                    <h3>Commercial Architecture</h3>
                     <p>Designing modern business environments that encourage growth, collaboration, and productivity.</p>
                 </div>
                 <div class="service-card">
@@ -1027,6 +1148,57 @@
                     <h3>Industrial & Infrastructure</h3>
                     <p>Delivering robust, efficient, and future-ready developments.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section - NEW -->
+    <section class="service-details">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Our Architectural Services</h2>
+            </div>
+            
+            <div class="service-category">
+                <h3>Residential Architecture Design in Bangalore</h3>
+                <p>At MG Buildcon Architects, we specialize in creating bespoke residential spaces that reflect your personality and lifestyle. Our residential architecture services in Bangalore include:</p>
+                <ul class="service-features">
+                    <li>Custom home design and planning</li>
+                    <li>Villa and bungalow architecture</li>
+                    <li>Apartment and duplex design</li>
+                    <li>Space optimization and interior-exterior integration</li>
+                    <li>Sustainable and eco-friendly home design</li>
+                    <li>Renovation and extension services</li>
+                </ul>
+                <p>Our residential architects work closely with you to understand your needs, preferences, and budget, ensuring that every home we design is both beautiful and functional.</p>
+            </div>
+            
+            <div class="service-category">
+                <h3>Commercial Architecture Services</h3>
+                <p>We design commercial spaces that foster productivity, collaboration, and business growth. Our commercial architecture expertise includes:</p>
+                <ul class="service-features">
+                    <li>Office building design and planning</li>
+                    <li>Retail and showroom architecture</li>
+                    <li>Hotel and hospitality design</li>
+                    <li>Healthcare facility planning</li>
+                    <li>Educational institution architecture</li>
+                    <li>Mixed-use development design</li>
+                </ul>
+                <p>As experienced commercial architects in Bangalore, we understand the unique requirements of business spaces and create designs that enhance workflow, brand image, and customer experience.</p>
+            </div>
+            
+            <div class="service-category">
+                <h3>Industrial & Infrastructure Architecture</h3>
+                <p>Our industrial architecture services focus on creating efficient, safe, and sustainable spaces for manufacturing, warehousing, and infrastructure:</p>
+                <ul class="service-features">
+                    <li>Factory and manufacturing plant design</li>
+                    <li>Warehouse and storage facility planning</li>
+                    <li>Industrial park development</li>
+                    <li>Infrastructure project design</li>
+                    <li>Utility building architecture</li>
+                    <li>Compliance and safety-focused design</li>
+                </ul>
+                <p>We combine functionality with innovation to create industrial spaces that optimize operations while prioritizing worker safety and environmental sustainability.</p>
             </div>
         </div>
     </section>
@@ -1127,6 +1299,96 @@
             </div>
             <div class="intro-text" style="margin-top: 3rem;">
                 <p><strong>MG Buildcon Architects – Building Dreams, Designing Futures.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section - NEW -->
+    <section class="faq-section" id="faq">
+        <div class="section-content">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you serve as architects in Bangalore?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>MG Buildcon Architects serves all areas of Bangalore and surrounding regions. We have completed projects in Whitefield, Koramangala, Indiranagar, Jayanagar, HSR Layout, Sadashivanagar, JP Nagar, Malleshwaram, Yelahanka, Electronic City, and Bannerghatta among others.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is the process for starting an architectural project with you?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our architectural design process includes: 1) Initial consultation to understand your requirements, 2) Site analysis and feasibility study, 3) Concept design development, 4) Detailed design and planning, 5) 3D visualization and walkthroughs, 6) Construction documentation, and 7) Site supervision during construction.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does an architectural project typically take?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The timeline varies based on project complexity and scale. For residential projects: 2-4 months for design development and approvals, plus construction time. Commercial projects: 3-6 months for design and approvals. We provide detailed timelines during our initial consultation based on your specific project requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you provide 3D visualization of architectural designs?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide comprehensive 3D visualizations, walkthroughs, and virtual reality experiences for all our projects. This helps clients visualize the final outcome before construction begins and allows for modifications at the design stage, saving time and resources.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What makes your residential architecture services unique?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our residential architecture approach combines: personalized design based on client lifestyle, sustainable building practices, smart home integration, space optimization techniques, and a perfect balance between aesthetic appeal and functionality. We treat each home as a unique reflection of its inhabitants.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you handle building permits and approvals?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide complete assistance with building permits, approvals, and regulatory compliance. Our team is experienced with Bangalore's building bylaws, BBMP regulations, and other local requirements, ensuring a smooth approval process for your project.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What sustainable design practices do you incorporate?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We integrate various sustainable practices including: energy-efficient building orientation, rainwater harvesting systems, solar energy integration, green roofing, natural ventilation optimization, use of sustainable materials, water recycling systems, and waste management solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you work with existing structures for renovation projects?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We specialize in architectural renovation and remodeling projects. Our approach involves assessing the existing structure, identifying opportunities for improvement, and creating designs that enhance both functionality and aesthetics while respecting the original architecture.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1448,11 +1710,11 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
             <div class="footer-logo">
                 <h3>MG Buildcon Architects</h3>
-                <p>Creators of spaces that inspire, sustain, and stand the test of time.</p>
+                <p>Leading architectural design services in Bangalore - Creators of spaces that inspire, sustain, and stand the test of time.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -1470,7 +1732,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2025 MG Buildcon Architects. All Rights Reserved. | Designed by Jeevan K S</p>
+            <p>&copy; 2025 MG Buildcon Architects. All Rights Reserved. | Designed by JRS Creative Studio</p>
         </div>
     </footer>
 
@@ -1532,6 +1794,60 @@
                     header.style.background = 'rgba(26, 26, 26, 0.95)';
                     header.style.padding = '1.5rem 5%';
                 }
+            });
+            
+            // Project filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const answer = this.nextElementSibling;
+                    
+                    // Close other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('active');
+                            item.querySelector('.faq-answer').classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    faqItem.classList.toggle('active');
+                    answer.classList.toggle('active');
+                });
             });
         });
     </script>
