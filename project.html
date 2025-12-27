@@ -3,7 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects | MG Buildcon Pvt Ltd</title>
+    <title>Our Construction Projects | MG Buildcon Pvt Ltd | Bengaluru, Karnataka</title>
+    <meta name="description" content="Explore MG Buildcon's construction projects portfolio in Bengaluru. Residential, commercial & industrial projects with quality craftsmanship since 2005.">
+    <meta name="keywords" content="construction projects Bengaluru, residential construction Bangalore, commercial building projects, MG Buildcon portfolio, Karnataka construction company">
+    
+    <!-- Open Graph Tags for Social Sharing -->
+    <meta property="og:title" content="Our Construction Projects | MG Buildcon Pvt Ltd">
+    <meta property="og:description" content="Explore our portfolio of quality construction projects in Bengaluru and Karnataka.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mgbuildcon.com/project.html">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "MG Buildcon Pvt Ltd",
+      "image": "https://www.mgbuildcon.com/images/logo.jpg",
+      "description": "Building Dreams Since 2005 - Quality construction services in Bengaluru, Karnataka",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No. 96/127, 1st floor, 7th Main Road, 4th Block Jayanagar",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "postalCode": "560011",
+        "addressCountry": "IN"
+      },
+      "telephone": "+91-9880166879",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "url": "https://www.mgbuildcon.com"
+    }
+    </script>
+    
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,6 +42,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T5B2C3K4');</script>
     <!-- End Google Tag Manager -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -318,6 +350,22 @@
             margin-right: auto;
         }
         
+        .location-keywords {
+            text-align: center;
+            margin: 20px 0 40px;
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .location-keywords span {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 3px 10px;
+            background-color: #f0f7ff;
+            border-radius: 20px;
+            color: #0056b3;
+        }
+        
         .filter-buttons {
             display: flex;
             justify-content: center;
@@ -472,12 +520,19 @@
             align-items: center;
             gap: 8px;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 0.9rem;
         }
         
         .project-location i {
             color: #FFD700;
+        }
+        
+        .project-description {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
         }
         
         .project-specs {
@@ -523,6 +578,29 @@
         .status-upcoming {
             background-color: #f0f7ff;
             color: #0056b3;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .service-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: #f0f7ff;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            color: #0056b3;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .service-tag:hover {
+            background-color: #0056b3;
+            color: white;
         }
         
         .project-link {
@@ -799,6 +877,10 @@
                 justify-content: flex-start;
                 padding: 0 20px;
             }
+            
+            .location-keywords {
+                display: none;
+            }
         }
         
         @media (max-width: 480px) {
@@ -843,9 +925,9 @@
                     <li class="dropdown">
                         <a href="project.html" class="active">Projects <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="project.html">Residential</a></li>
-                            <li><a href="project.html">Commercial</a></li>
-                            <li><a href="project.html">Industrial</a></li>
+                            <li><a href="project.html#residential">Residential Projects</a></li>
+                            <li><a href="project.html#commercial">Commercial Projects</a></li>
+                            <li><a href="project.html#ongoing">Ongoing Projects</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -873,7 +955,7 @@
         <div class="container">
             <div class="projects-hero-content">
                 <h1>Constructing Dreams Into <span>Comfortable Living</span></h1>
-                <p>Molding Dreams Into Liveable Spaces!</p>
+                <p>Molding Dreams Into Liveable Spaces! Explore our construction projects across Bengaluru and Karnataka.</p>
                 <a href="tel:+91 9880166879" class="call-btn">
                     Book a Call <i class="fas fa-phone"></i>
                 </a>
@@ -884,8 +966,20 @@
     <!-- Projects Grid Section -->
     <section class="projects-grid">
         <div class="container">
-            <h2 class="section-title">Our <span>Projects</span></h2>
-            <p class="section-subtitle">Explore our portfolio of completed and ongoing projects that showcase our commitment to quality and innovation</p>
+            <h2 class="section-title">Our <span>Construction Projects</span></h2>
+            <p class="section-subtitle">Explore our portfolio of completed and ongoing construction projects that showcase our commitment to quality and innovation in Bengaluru, Karnataka</p>
+            
+            <!-- Location Keywords for SEO -->
+            <div class="location-keywords">
+                <strong>Areas We Serve:</strong>
+                <span>Bengaluru</span>
+                <span>Bangalore</span>
+                <span>JP Nagar</span>
+                <span>Anjanapura</span>
+                <span>Kengeri</span>
+                <span>Channapatana</span>
+                <span>Karnataka</span>
+            </div>
             
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -893,30 +987,31 @@
                 <button class="filter-btn" data-filter="commercial">Commercial</button>
                 <button class="filter-btn" data-filter="ongoing">Ongoing</button>
                 <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
             </div>
             
             <div class="grid-container">
                 <!-- Project 1 - JP Nagar -->
-                <div class="project-card" data-category="residential ongoing">
+                <div class="project-card" data-category="residential ongoing" id="jp-nagar">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="Images 1/elevation jp nagar main photo .jpg" alt="JP Nagar Residence - Exterior">
+                                <img src="Images 1/elevation jp nagar main photo .jpg" alt="Modern 3BHK residential building exterior in JP Nagar, Bengaluru - MG Buildcon construction project">
                             </div>
                             <div class="gallery-slide">
-                                <img src="jp nagar/j1.jpg" alt="JP Nagar Residence - Living Room">
+                                <img src="jp nagar/j1.jpg" alt="Spacious living room interior design in JP Nagar residential project by MG Buildcon">
                             </div>
                             <div class="gallery-slide">
-                                <img src="jp nagar/j2.jpg" alt="JP Nagar Residence - Kitchen">
+                                <img src="jp nagar/j2.jpg" alt="Modern kitchen design with premium finishes in JP Nagar Bengaluru home">
                             </div>
                             <div class="gallery-slide">
-                                <img src="jp nagar/j3.jpg" alt="JP Nagar Residence - Kitchen">
+                                <img src="jp nagar/j3.jpg" alt="High-quality bathroom fittings in JP Nagar residential construction">
                             </div>
                             <div class="gallery-slide">
-                                <img src="jp nagar/j4.jpg" alt="JP Nagar Residence - Kitchen">
+                                <img src="jp nagar/j4.jpg" alt="Bedroom interior with custom wardrobes in Bengaluru JP Nagar project">
                             </div>
                             <div class="gallery-slide">
-                                <img src="jp nagar/j5.jpg" alt="JP Nagar Residence - Kitchen">
+                                <img src="jp nagar/j5.jpg" alt="Balcony view of JP Nagar residential construction project">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -935,11 +1030,12 @@
                     <div class="project-info">
                         <h3>JP Nagar Residence Ganpathipura</h3>
                         <div class="project-location">
-                            <i class="fas fa-map-marker-alt"></i> JP Nagar, Bengaluru
+                            <i class="fas fa-map-marker-alt"></i> JP Nagar, Bengaluru, Karnataka
                         </div>
+                        <p class="project-description">Modern 3BHK residential construction project in prime JP Nagar location. Features premium finishes, spacious layouts, and energy-efficient design. Our team provides comprehensive construction services including architectural design and interior finishing.</p>
                         <div class="project-specs">
                             <div class="spec-item">
-                                <i class="fas fa-home"></i> 3BHK
+                                <i class="fas fa-home"></i> 3BHK Apartments
                             </div>
                             <div class="spec-item">
                                 <i class="fas fa-ruler-combined"></i> 1800 sq.ft
@@ -948,23 +1044,28 @@
                                 <i class="fas fa-calendar-alt"></i> 2024
                             </div>
                         </div>
+                        <div class="service-tags">
+                            <a href="construction.html" class="service-tag">Construction Services</a>
+                            <a href="archii.html" class="service-tag">Architectural Design</a>
+                            <a href="interior.html" class="service-tag">Interior Design</a>
+                        </div>
                         <span class="project-status status-ongoing">Ongoing</span>
-                        <a href="#" class="project-link">View Details</a>
+                        <a href="contact.html" class="project-link">Inquire About This Project</a>
                     </div>
                 </div>
 
                 <!-- Project 2 - MG Towers -->
-                <div class="project-card" data-category="residential completed">
+                <div class="project-card" data-category="commercial completed" id="mg-towers">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="images/build - 6.jpg" alt="MG Towers - Exterior">
+                                <img src="images/build - 6.jpg" alt="MG Towers commercial building exterior in Channapatana, Karnataka - Completed construction project">
                             </div>
                             <div class="gallery-slide">
-                                <img src="Images 1/m1.jpg" alt="MG Towers - Lobby">
+                                <img src="Images 1/m1.jpg" alt="Modern commercial lobby design in MG Towers Karnataka">
                             </div>
                             <div class="gallery-slide">
-                                <img src="Images 1/m2.jpg" alt="MG Towers - View">
+                                <img src="Images 1/m2.jpg" alt="Panoramic view from MG Towers commercial complex in Channapatana">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -982,28 +1083,33 @@
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i> Channapatana, Karnataka
                         </div>
+                        <p class="project-description">Commercial complex with 3 floors of premium office spaces and retail units. Completed in 2005, this project showcases our expertise in commercial construction with sustainable design features and excellent structural integrity.</p>
                         <div class="project-specs">
                             <div class="spec-item">
-                                <i class="fas fa-home"></i> 3 Floors
+                                <i class="fas fa-home"></i> 3 Floors Commercial
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i> 42800 sq.ft
+                                <i class="fas fa-ruler-combined"></i> 42,800 sq.ft
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-calendar-alt"></i> 2005
+                                <i class="fas fa-calendar-alt"></i> 2005 (Completed)
                             </div>
                         </div>
+                        <div class="service-tags">
+                            <a href="construction.html" class="service-tag">Commercial Construction</a>
+                            <a href="archii.html" class="service-tag">Commercial Design</a>
+                        </div>
                         <span class="project-status status-completed">Completed</span>
-                        <a href="#" class="project-link">View Details</a>
+                        <a href="contact.html" class="project-link">View Similar Projects</a>
                     </div>
                 </div>
 
                 <!-- Project 3 - Anjanapura -->
-                <div class="project-card" data-category="residential ongoing">
+                <div class="project-card" data-category="residential ongoing" id="anjanapura">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="Images 1/anjanapura.jpg" alt="Anjanapura - Exterior">
+                                <img src="Images 1/anjanapura.jpg" alt="Ground+3 residential building construction in Anjanapura 6th block, Bengaluru">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -1015,41 +1121,46 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Anjanapura</h3>
+                        <h3>Anjanapura Residential Project</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i> Anjanapura 6th block, Bengaluru
                         </div>
+                        <p class="project-description">Modern residential development in the rapidly growing Anjanapura area. This Ground+3 floors project offers contemporary living spaces with smart home features, ample ventilation, and community amenities. Perfect for families seeking quality construction in South Bengaluru.</p>
                         <div class="project-specs">
                             <div class="spec-item">
                                 <i class="fas fa-home"></i> Ground+3 Floors
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-ruler-combined"></i> 1200 sq.ft
+                                <i class="fas fa-ruler-combined"></i> 1200 sq.ft units
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-calendar-alt"></i> 2025
+                                <i class="fas fa-calendar-alt"></i> 2025 Completion
                             </div>
                         </div>
+                        <div class="service-tags">
+                            <a href="construction.html" class="service-tag">Residential Construction</a>
+                            <a href="interior.html" class="service-tag">Custom Interiors</a>
+                        </div>
                         <span class="project-status status-ongoing">Ongoing</span>
-                        <a href="#" class="project-link">View Details</a>
+                        <a href="contact.html" class="project-link">Book a Site Visit</a>
                     </div>
                 </div>
 
                 <!-- Project 4 - Kengeri -->
-                <div class="project-card" data-category="residential upcoming">
+                <div class="project-card" data-category="residential upcoming" id="kengeri">
                     <div class="image-gallery">
                         <div class="gallery-slides">
                             <div class="gallery-slide">
-                                <img src="Images 1/kengeri.jpg" alt="Kengeri - Site">
+                                <img src="Images 1/kengeri.jpg" alt="Upcoming residential construction site in Kengeri, Bengaluru - MG Buildcon project">
                             </div>
                             <div class="gallery-slide">
-                                <img src="Images 1/a1.JPG" alt="Kengeri - Interior">
+                                <img src="Images 1/a1.JPG" alt="Interior design plan for Kengeri residential project in Bengaluru">
                             </div>
                             <div class="gallery-slide">
-                                <img src="kengeri/k4.jpg" alt="Kengeri - Bathroom">
+                                <img src="kengeri/k4.jpg" alt="Modern bathroom design for upcoming Kengeri apartments">
                             </div>
                             <div class="gallery-slide">
-                                <img src="kengeri/k5.jpg" alt="Kengeri - Bathroom">
+                                <img src="kengeri/k5.jpg" alt="Kitchen design layout for Kengeri residential construction">
                             </div>
                         </div>
                         <div class="gallery-nav">
@@ -1064,29 +1175,54 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <h3>Kengeri</h3>
+                        <h3>Kengeri Residential Complex</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i> Kengeri, Bengaluru
                         </div>
+                        <p class="project-description">Upcoming premium residential complex offering 2 & 3 BHK apartments in the developing Kengeri area. Designed with modern amenities, green spaces, and sustainable construction practices. Pre-booking now available for early investors.</p>
                         <div class="project-specs">
                             <div class="spec-item">
-                                <i class="fas fa-home"></i> 2 & 3 BHK
+                                <i class="fas fa-home"></i> 2 & 3 BHK Apartments
                             </div>
                             <div class="spec-item">
                                 <i class="fas fa-ruler-combined"></i> 900-1500 sq.ft
                             </div>
                             <div class="spec-item">
-                                <i class="fas fa-calendar-alt"></i> 2026
+                                <i class="fas fa-calendar-alt"></i> 2026 Launch
                             </div>
                         </div>
-                        <span class="project-status status-upcoming">Upcoming</span>
-                        <a href="#" class="project-link">View Details</a>
+                        <div class="service-tags">
+                            <a href="construction.html" class="service-tag">New Construction</a>
+                            <a href="archii.html" class="service-tag">Project Planning</a>
+                            <a href="interior.html" class="service-tag">Interior Packages</a>
+                        </div>
+                        <span class="project-status status-upcoming">Upcoming - Pre-booking</span>
+                        <a href="contact.html" class="project-link">Pre-book Now</a>
                     </div>
                 </div>
             </div>
             
             <div class="load-more">
                 <button class="load-btn">Load More Projects</button>
+            </div>
+            
+            <!-- Internal Links to Services Section -->
+            <div style="margin-top: 60px; padding: 30px; background-color: #f0f7ff; border-radius: 10px;">
+                <h3 style="text-align: center; color: #0056b3; margin-bottom: 20px;">Our Construction Services</h3>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="construction.html" style="padding: 12px 25px; background-color: #0056b3; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
+                        <i class="fas fa-hard-hat"></i> Construction Services
+                    </a>
+                    <a href="archii.html" style="padding: 12px 25px; background-color: #FFD700; color: #0056b3; text-decoration: none; border-radius: 4px; font-weight: 500;">
+                        <i class="fas fa-drafting-compass"></i> Architectural Design
+                    </a>
+                    <a href="interior.html" style="padding: 12px 25px; background-color: #ff6b00; color: white; text-decoration: none; border-radius: 4px; font-weight: 500;">
+                        <i class="fas fa-couch"></i> Interior Design
+                    </a>
+                </div>
+                <p style="text-align: center; margin-top: 20px; color: #555;">
+                    Looking for construction services in Bengaluru? <a href="contact.html" style="color: #0056b3; font-weight: 500;">Contact us today</a> for a free consultation!
+                </p>
             </div>
         </div>
     </section>
@@ -1097,7 +1233,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>About MG Buildcon</h3>
-                    <p>Building dreams since 2025, MG Buildcon Pvt Ltd is committed to excellence in construction and design, creating spaces that inspire and endure.</p>
+                    <p>Building dreams since 2025, MG Buildcon Pvt Ltd is committed to excellence in construction and design, creating spaces that inspire and endure. Serving Bengaluru and Karnataka with quality construction services.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1109,8 +1245,10 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="project.html">Projects</a></li>
-                        <li><a href="construction.html">Services</a></li>
+                        <li><a href="project.html">Construction Projects</a></li>
+                        <li><a href="construction.html">Construction Services</a></li>
+                        <li><a href="archii.html">Architectural Design</a></li>
+                        <li><a href="interior.html">Interior Design</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="careers.html">Careers</a></li>
                     </ul>
@@ -1118,13 +1256,14 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> No. 96/127, 1st floor, 7th Main Road,
-                        4th Block Jayanagar, Bangalore - 560011</p>
+                        4th Block Jayanagar, Bangalore - 560011, Karnataka</p>
                     <p><i class="fas fa-phone"></i> +91 9880166879 </p>
                     <p><i class="fas fa-envelope"></i> mgbuildcon2025@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Designed by Jeevan K S</p>
+                <p>&copy; 2005-2025 MG Buildcon Pvt Ltd. All Rights Reserved. | Building Quality Construction Projects in Bengaluru, Karnataka | Designed by JRS Creative Studio</p>
             </div>
         </div>
     </footer>
@@ -1214,6 +1353,15 @@
                 setTimeout(() => {
                     this.textContent = 'No More Projects';
                     this.disabled = true;
+                    
+                    // In a real implementation, you would append new project cards here
+                    // For now, just show a message
+                    const message = document.createElement('p');
+                    message.textContent = 'All projects loaded. Check back soon for new projects!';
+                    message.style.textAlign = 'center';
+                    message.style.marginTop = '20px';
+                    message.style.color = '#666';
+                    loadBtn.parentNode.appendChild(message);
                 }, 1000);
             });
 
