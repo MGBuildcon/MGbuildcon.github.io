@@ -67,6 +67,13 @@
             animation: pulse 2s infinite;
         }
         
+        /* Logo image styles */
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+        
         .logo-text {
             display: flex;
             flex-direction: column;
@@ -778,6 +785,10 @@
                 font-size: 1.6rem;
             }
             
+            .logo-img {
+                height: 40px;
+            }
+            
             .projects-hero {
                 height: 60vh;
                 min-height: 400px;
@@ -832,7 +843,8 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <i class="fas fa-building logo-icon"></i>
+                    <!-- Updated logo with image src -->
+                    <img src="images/IMG-20250508-WA0002.png" alt="MG Buildcon Logo" class="logo-img">
                     <div class="logo-text">
                         <h1><span>MG</span> Buildcon Pvt Ltd</h1>
                         <p>Building Dreams Since 2025</p>
