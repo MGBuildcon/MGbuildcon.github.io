@@ -80,10 +80,12 @@
             gap: 10px;
         }
         
-        .logo-icon {
-            color: #0056b3;
-            font-size: 2rem;
-            animation: pulse 2s infinite;
+        /* Updated logo-icon to use image instead of icon */
+        .logo-icon-img {
+            height: 45px;
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
         
         .logo-text {
@@ -1072,7 +1074,8 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <i class="fas fa-building logo-icon"></i>
+                    <!-- Replaced the icon with actual logo image (base64 encoded placeholder logo with building silhouette) -->
+                    <img src="images/IMG-20250508-WA0002.png" alt="MG Buildcon Logo" class="logo-icon-img">
                     <div class="logo-text">
                         <h1><span>MG</span> Buildcon Pvt Ltd</h1>
                         <p>Building Dreams Since 2025</p>
@@ -1393,7 +1396,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="logo">
-                        <i class="fas fa-building logo-icon"></i>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230056b3'/%3E%3Cpolygon points='20,80 40,50 60,50 80,80' fill='%23ffffff'/%3E%3Crect x='40' y='60' width='20' height='20' fill='%23ff6b00'/%3E%3Crect x='25' y='70' width='10' height='10' fill='%23ffffff'/%3E%3Crect x='65' y='70' width='10' height='10' fill='%23ffffff'/%3E%3C/svg%3E" alt="MG Buildcon Logo" class="logo-icon-img">
                         <div class="logo-text">
                             <h1 style="color: white;"><span style="color: #ff6b00;">MG</span> Buildcon Pvt Ltd</h1>
                             <p style="color: #bbb;">Building Dreams Since 2025</p>
