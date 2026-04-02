@@ -93,6 +93,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gap: 10px;
         }
         
+        /* Added style for logo image */
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+        
         .logo-icon {
             color: #0056b3;
             font-size: 2rem;
@@ -725,7 +732,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <i class="fas fa-building logo-icon"></i>
+                    <!-- Added logo image instead of icon -->
+                    <img src="images/IMG-20250508-WA0002.png" 
+                         alt="MG Buildcon Logo" 
+                         class="logo-img"
+                         style="height: 48px; width: auto;">
                     <div class="logo-text">
                         <h1><span>MG</span> Buildcon Pvt Ltd</h1>
                         <p>Building Dreams Since 2025</p>
